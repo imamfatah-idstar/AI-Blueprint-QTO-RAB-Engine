@@ -1,0 +1,1115 @@
+{
+  "trained_at": "2026-11-17T00:51:17.792794+00:00",
+  "dxf_profile": {
+    "total_files": 47,
+    "parsed_files": 47,
+    "top_layers": [
+      {
+        "layer": "0",
+        "count": 3046
+      },
+      {
+        "layer": "INSERT_POINTS",
+        "count": 2056
+      },
+      {
+        "layer": "title",
+        "count": 135
+      },
+      {
+        "layer": "image",
+        "count": 70
+      },
+      {
+        "layer": "context",
+        "count": 28
+      },
+      {
+        "layer": "HATCH",
+        "count": 14
+      },
+      {
+        "layer": "BLUE",
+        "count": 14
+      },
+      {
+        "layer": "RED",
+        "count": 14
+      },
+      {
+        "layer": "DYNAMIC",
+        "count": 6
+      },
+      {
+        "layer": "LINE",
+        "count": 6
+      },
+      {
+        "layer": "text-layer",
+        "count": 4
+      },
+      {
+        "layer": "1",
+        "count": 3
+      },
+      {
+        "layer": "STATIC",
+        "count": 3
+      },
+      {
+        "layer": "Layer2",
+        "count": 2
+      },
+      {
+        "layer": "A.Wall_Internal",
+        "count": 2
+      }
+    ],
+    "top_entities": [
+      {
+        "type": "CIRCLE",
+        "count": 2103
+      },
+      {
+        "type": "TEXT",
+        "count": 1415
+      },
+      {
+        "type": "LINE",
+        "count": 1063
+      },
+      {
+        "type": "LWPOLYLINE",
+        "count": 313
+      },
+      {
+        "type": "MTEXT",
+        "count": 269
+      },
+      {
+        "type": "IMAGE",
+        "count": 64
+      },
+      {
+        "type": "3DFACE",
+        "count": 46
+      },
+      {
+        "type": "INSERT",
+        "count": 40
+      },
+      {
+        "type": "HATCH",
+        "count": 33
+      },
+      {
+        "type": "DIMENSION",
+        "count": 14
+      },
+      {
+        "type": "ARC",
+        "count": 10
+      },
+      {
+        "type": "ATTDEF",
+        "count": 8
+      }
+    ],
+    "median_bbox_area": 7323.69,
+    "median_wall_length": 834.08,
+    "samples": [
+      {
+        "name": "3dface.dxf",
+        "entities": 71,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "Minimal_DXF_AC1006.dxf",
+        "entities": 3,
+        "layers": [
+          "1"
+        ]
+      },
+      {
+        "name": "Minimal_DXF_AC1009.dxf",
+        "entities": 0,
+        "layers": []
+      },
+      {
+        "name": "Minimal_DXF_AC1021.dxf",
+        "entities": 0,
+        "layers": []
+      },
+      {
+        "name": "VP4.dxf",
+        "entities": 6,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "acad_table_simple.dxf",
+        "entities": 1,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "acad_table_with_blk_ref.dxf",
+        "entities": 1,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "caret_encoding.dxf",
+        "entities": 61,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "circle_radius_le_0.dxf",
+        "entities": 2,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "clockwise_arcs_hatch.dxf",
+        "entities": 1,
+        "layers": [
+          "HATCH"
+        ]
+      },
+      {
+        "name": "colors.dxf",
+        "entities": 28,
+        "layers": [
+          "BLUE",
+          "RED"
+        ]
+      },
+      {
+        "name": "columns_R2007.dxf",
+        "entities": 52,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "columns_R2018.dxf",
+        "entities": 52,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "dimension_in_block.dxf",
+        "entities": 4,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "dimension_in_nested_blocks.dxf",
+        "entities": 4,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatch_issues.dxf",
+        "entities": 12,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatch_text_box_in_fill.dxf",
+        "entities": 4,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatch_text_box_in_hole.dxf",
+        "entities": 4,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatch_text_box_overlapping_fill_and_hole.dxf",
+        "entities": 4,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatches_1.dxf",
+        "entities": 32,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "hatches_2.dxf",
+        "entities": 11,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "image/images.dxf",
+        "entities": 233,
+        "layers": [
+          "context",
+          "image",
+          "title"
+        ]
+      },
+      {
+        "name": "image/viewports.dxf",
+        "entities": 17,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "insert_bricscad_level_1.dxf",
+        "entities": 24,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "mtext_columns_R2000.dxf",
+        "entities": 3,
+        "layers": [
+          "DYNAMIC",
+          "STATIC"
+        ]
+      },
+      {
+        "name": "mtext_columns_R2007.dxf",
+        "entities": 3,
+        "layers": [
+          "DYNAMIC",
+          "STATIC"
+        ]
+      },
+      {
+        "name": "mtext_columns_R2018.dxf",
+        "entities": 3,
+        "layers": [
+          "DYNAMIC",
+          "STATIC"
+        ]
+      },
+      {
+        "name": "mtext_complex_inline_codes.dxf",
+        "entities": 12,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "multi_insert_with_attribs.dxf",
+        "entities": 1,
+        "layers": [
+          "FLAGS"
+        ]
+      },
+      {
+        "name": "text.dxf",
+        "entities": 222,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "text_alignments.dxf",
+        "entities": 58,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_fonts.dxf",
+        "entities": 1344,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_in_viewports.dxf",
+        "entities": 8,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "text_mirror_shx_font.dxf",
+        "entities": 672,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_mirror_true_type_font.dxf",
+        "entities": 672,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_negative_extrusion.dxf",
+        "entities": 222,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "text_oblique_rotate.dxf",
+        "entities": 317,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_stacked_shx_font.dxf",
+        "entities": 439,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "text_stacked_true_type_font.dxf",
+        "entities": 439,
+        "layers": [
+          "0",
+          "INSERT_POINTS"
+        ]
+      },
+      {
+        "name": "transform_hatch_pattern.dxf",
+        "entities": 24,
+        "layers": [
+          "0",
+          "HATCH",
+          "LINE"
+        ]
+      },
+      {
+        "name": "uncommon.dxf",
+        "entities": 82,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "valid_lineweights.dxf",
+        "entities": 50,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "viewport_frozen_layers.dxf",
+        "entities": 4,
+        "layers": [
+          "0",
+          "Layer1",
+          "Layer2",
+          "Layer3"
+        ]
+      },
+      {
+        "name": "visibility.dxf",
+        "entities": 6,
+        "layers": [
+          "0",
+          "Layer2",
+          "text-layer"
+        ]
+      },
+      {
+        "name": "wipeout_door.dxf",
+        "entities": 149,
+        "layers": [
+          "0",
+          "A.Wall_Internal"
+        ]
+      },
+      {
+        "name": "wipeout_random.dxf",
+        "entities": 31,
+        "layers": [
+          "0"
+        ]
+      },
+      {
+        "name": "xclip.dxf",
+        "entities": 18,
+        "layers": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "vision_profile": {
+    "total_files": 453,
+    "scanned_files": 120,
+    "median_diagonal_px": 1306.9,
+    "median_edge_density": 0.0839,
+    "median_line_to_diag_ratio": 45.66,
+    "median_contour_fill_ratio": 0.575,
+    "median_known_floor_area_m2": 134.2,
+    "featured_samples": [
+      {
+        "name": "-332018825_jpg.rf.5bd46a35b87f1f025bce3a829751fe15.jpg",
+        "width": 1024,
+        "height": 724,
+        "known_area_m2": null
+      },
+      {
+        "name": "01c_jpg.rf.bf182a12ca53f96abe78419ec2d39f01.jpg",
+        "width": 2755,
+        "height": 1941,
+        "known_area_m2": null
+      },
+      {
+        "name": "02_SECOND_FLOOR_PLAN_jpeg.rf.7cb04533052eb1b11d3d9631ba98e03e.jpg",
+        "width": 2000,
+        "height": 2829,
+        "known_area_m2": null
+      },
+      {
+        "name": "085c37c4be51013efd6c07f93df811c0_png.rf.00cc14fa024d6a7cb03a3455773506b3.jpg",
+        "width": 830,
+        "height": 586,
+        "known_area_m2": null
+      },
+      {
+        "name": "0c3d53ed_jpg.rf.616f07b47f153a07cd29e415446327a4.jpg",
+        "width": 3560,
+        "height": 3296,
+        "known_area_m2": null
+      },
+      {
+        "name": "1-3-_jpg.rf.9c29b74315c7edbb9bb3a67a670bc536.jpg",
+        "width": 1800,
+        "height": 1273,
+        "known_area_m2": null
+      },
+      {
+        "name": "108_jpg.rf.0b85739e8d734d5bff2386c7aea9a0bb.jpg",
+        "width": 800,
+        "height": 583,
+        "known_area_m2": null
+      },
+      {
+        "name": "11-engineering-discoveries-stunning-house-design-plans-14_0m-9_0m-with-3-beds-and8211-full-plans_jpg.rf.24094d8be8cdea554e42fa67d930b542.jpg",
+        "width": 1691,
+        "height": 2181,
+        "known_area_m2": null
+      },
+      {
+        "name": "11943b540f037c8c3b60fcba5846d119_jpg.rf.93ba1ad2844f3f8bcbaef15e6195e03e.jpg",
+        "width": 1436,
+        "height": 859,
+        "known_area_m2": null
+      },
+      {
+        "name": "1393511588_jpg.rf.b23f5b348b35511c9f908e6139aaf9fd.jpg",
+        "width": 1024,
+        "height": 724,
+        "known_area_m2": null
+      },
+      {
+        "name": "14_mo_jpeg.rf.73b6981eff9c0f525d226919483f5e11.jpg",
+        "width": 600,
+        "height": 702,
+        "known_area_m2": null
+      },
+      {
+        "name": "1554830359170Pages_from_Near__Far_House_FINAL_Page_4_jpg.rf.adbfe12ee41b2dbdc77bb9df7eb64f23.jpg",
+        "width": 2550,
+        "height": 1650,
+        "known_area_m2": null
+      },
+      {
+        "name": "16017_Upper_jpg.rf.240511ecc98a4db1d4fb0ea3635f1d12.jpg",
+        "width": 1195,
+        "height": 873,
+        "known_area_m2": null
+      },
+      {
+        "name": "1801-4125_jpeg.rf.4f807ea82300ac0507467bf4e7d630b1.jpg",
+        "width": 847,
+        "height": 931,
+        "known_area_m2": null
+      },
+      {
+        "name": "1916895173152492135_jpg.rf.d6818b756badae179bc22b8b6a84da16.jpg",
+        "width": 1084,
+        "height": 725,
+        "known_area_m2": null
+      },
+      {
+        "name": "1_Basement_jpg.rf.07a2c7939a0dc6bcbb18e2f70cf46037.jpg",
+        "width": 1500,
+        "height": 1071,
+        "known_area_m2": null
+      },
+      {
+        "name": "1d19b3abe5cc965b1713335c877b5cd6-full_jpg.rf.de4f245a2cb944bbf2ebf93b97ee5f50.jpg",
+        "width": 1200,
+        "height": 799,
+        "known_area_m2": null
+      },
+      {
+        "name": "1st-floor-1-_jpg.rf.591d2eccb997b82ea6c2a785560be4fb.jpg",
+        "width": 572,
+        "height": 659,
+        "known_area_m2": null
+      },
+      {
+        "name": "2-BR-Level-2-scaled_jpg.rf.da27727cc16208409d6f5d4aad2528f4.jpg",
+        "width": 2560,
+        "height": 1724,
+        "known_area_m2": null
+      },
+      {
+        "name": "2-eco-home_blogLarge_jpeg.rf.3ddf5bcabb83901e505788c26b6b9852.jpg",
+        "width": 1440,
+        "height": 900,
+        "known_area_m2": null
+      },
+      {
+        "name": "2015-05-24_Parkview-Electric-Revisions-2nd_jpg.rf.dfa39611ecf48be2965be84da8f3b551.jpg",
+        "width": 1600,
+        "height": 800,
+        "known_area_m2": null
+      },
+      {
+        "name": "2022_03_14_Portfolio_adds_SHORTER-1_20221116114338__d9f5a43a_jpg.rf.ca37907a4735116152c78eee034073a4.jpg",
+        "width": 920,
+        "height": 595,
+        "known_area_m2": null
+      },
+      {
+        "name": "20319646-0a2e-44e5-8f6d-2d64e80c3444_jpg.rf.c93a0679d5acfff0bfe8f51fe6a921a0.jpg",
+        "width": 1200,
+        "height": 960,
+        "known_area_m2": null
+      },
+      {
+        "name": "217-Hugo-Street-floor-plan-by-Ice-Design-Inc_jpg.rf.a77b5016115ae7a92ded556eb1dca107.jpg",
+        "width": 1500,
+        "height": 1439,
+        "known_area_m2": null
+      },
+      {
+        "name": "22203411188_96977a422d_jpg.rf.b835ab8ebe95ca30c5393f592b9486b3.jpg",
+        "width": 500,
+        "height": 454,
+        "known_area_m2": null
+      },
+      {
+        "name": "23x34-simple-floor-plans-ground-1148_jpeg.rf.253594a1d070d0483ad1b0be81a99702.jpg",
+        "width": 1275,
+        "height": 1650,
+        "known_area_m2": null
+      },
+      {
+        "name": "24686157_47_lg_jpg.rf.0df57bb82552f5cb921c47fcca71a524.jpg",
+        "width": 500,
+        "height": 391,
+        "known_area_m2": null
+      },
+      {
+        "name": "251fdrxt_jpg.rf.a144699183faf3a90a5303ba9f1fd939.jpg",
+        "width": 1276,
+        "height": 828,
+        "known_area_m2": null
+      },
+      {
+        "name": "2BedroomsHousePlanDrawingDownloadDWGFileFriApr2021115623_jpeg.rf.46309ce72bf21d559e7386436c749d7a.jpg",
+        "width": 1132,
+        "height": 804,
+        "known_area_m2": null
+      },
+      {
+        "name": "2d-house-floor-plan-by-arch_mazharul_jpg.rf.a55e1515c64775a0f53393d49eb47376.jpg",
+        "width": 2482,
+        "height": 1755,
+        "known_area_m2": null
+      }
+    ],
+    "all_filenames": [
+      "-332018825_jpg.rf.5bd46a35b87f1f025bce3a829751fe15.jpg",
+      "002_jpg.rf.20a31715fb120ef11c06941552b10963.jpg",
+      "00d671f8af724408447611c55b2152e6-cc_ft_960_jpg.rf.d2f6fbbd43afc006dcce259546041f12.jpg",
+      "01c_jpg.rf.bf182a12ca53f96abe78419ec2d39f01.jpg",
+      "01da4f17679119_562bd30421347_png.rf.7760d8470a6362ab095de3244eaacc71.jpg",
+      "027296545_1-8721536a79b17b67035bd06556acbf3a_png.rf.710802992baff0ecac2be2cd3ea2f383.jpg",
+      "02_SECOND_FLOOR_PLAN_jpeg.rf.7cb04533052eb1b11d3d9631ba98e03e.jpg",
+      "03-Second-Floor_jpg.rf.81bf4994ef7d6ce509d27d61cf7cc9ec.jpg",
+      "03-Wall-detailing-floor-plan-23x19-Small-House-Plan-7x6m-PDF-Full-Plans-Shed-Roof-scaled_jpg.rf.4bb7f9075256ab9b0a772c6e87b92c02.jpg",
+      "085c37c4be51013efd6c07f93df811c0_png.rf.00cc14fa024d6a7cb03a3455773506b3.jpg",
+      "098e9da8ee45fdb7ef28500e7aaf5a00-full_jpeg.rf.bd142181b700de477da51db672663723.jpg",
+      "0a1bd57219e6eea894a1a042f9d85612-cc_ft_960_jpg.rf.3cc98cc15353cc4e5301d633bd7aa618.jpg",
+      "0c3d53ed_jpg.rf.616f07b47f153a07cd29e415446327a4.jpg",
+      "0d8681d58af3c38e47ee8e0dff8dac78_jpg.rf.aac6470a51137ceed0fc395772233699.jpg",
+      "1-2-_jpg.rf.3a78cbdaf2fcf32e8a3fdde6e9032271.jpg",
+      "1-3-_jpg.rf.9c29b74315c7edbb9bb3a67a670bc536.jpg",
+      "10337657_8_jpg.rf.69babd77f3b6949a45f949d4ad76898a.jpg",
+      "105035_1646473181_jpeg.rf.dc2b6b8112e6f59e3f55e0f06ca152d7.jpg",
+      "108_jpg.rf.0b85739e8d734d5bff2386c7aea9a0bb.jpg",
+      "10richardstreetdoncastereastr21210528bim2asheettp0102proposed1stfloorplan_jpg.rf.007cd1e709e8944a51d4e3f7aefc042b.jpg",
+      "10richardstreetdoncastereastr21210528bim2asheettp0105gardenareaplan_jpg.rf.ea1c7911a6d4b9ae7bc81d5745edb806.jpg",
+      "11-engineering-discoveries-stunning-house-design-plans-14_0m-9_0m-with-3-beds-and8211-full-plans_jpg.rf.24094d8be8cdea554e42fa67d930b542.jpg",
+      "113-Woods-Run_jpg.rf.c46450a2a0aca75040c68cdc7f38b24b.jpg",
+      "114-Floor-Plans-Emerald-Cay-Estate-Providenciales-Turks-and-Caicos-Islands_jpg.rf.fb094aaaf42ae6553ee361aba17cc2f0.jpg",
+      "11943b540f037c8c3b60fcba5846d119_jpg.rf.93ba1ad2844f3f8bcbaef15e6195e03e.jpg",
+      "11x11-floor-plan-rotated_jpeg.rf.75ba57fa13516876f3044234763987e9.jpg",
+      "13-19-1_jpg.rf.9c9f99b788588c7999874e222574ff14.jpg",
+      "1393511588_jpg.rf.b23f5b348b35511c9f908e6139aaf9fd.jpg",
+      "1420-E_jpeg.rf.36151a50cbf889774a9534328e14d137.jpg",
+      "1476x605_jpg.rf.1e643b582e0a6a6f26b177c43ff9f390.jpg",
+      "14_mo_jpeg.rf.73b6981eff9c0f525d226919483f5e11.jpg",
+      "15-10-23-PL1416-64-Como-Road-DA_Page_06_jpg.rf.5d237578a8ce557d19271160cfa5cc4f.jpg",
+      "154-renodes-garden-ln-the-woodlands-tx-building-photo_jpg.rf.c6899b3495026af9cce433b85e89f5fd.jpg",
+      "1554830359170Pages_from_Near__Far_House_FINAL_Page_4_jpg.rf.adbfe12ee41b2dbdc77bb9df7eb64f23.jpg",
+      "155aa3723f180dfc82e5e40453cf57e5_jpg.rf.11ffa6bbe9a03398a7b1c595ad366090.jpg",
+      "1580-SE-8th-St_104-1727x1151_jpg.rf.e1a487d5725f882cb3554bb29164b8c4.jpg",
+      "16017_Upper_jpg.rf.240511ecc98a4db1d4fb0ea3635f1d12.jpg",
+      "1695359344288-Screenshot-2022-09-20-at-7_11_03-PM_jpeg.rf.adc35d19ffe41a7d5565bd639f8e194d.jpg",
+      "16_-_MAIN_LEVEL_PLAN_jpg.rf.5efe514591b11e93d279d9e14475923e.jpg",
+      "1801-4125_jpeg.rf.4f807ea82300ac0507467bf4e7d630b1.jpg",
+      "1896X1543MeterBungalowLayoutDWGFileSunMar2020052154_jpg.rf.142da3771d68794ec87f9eb5ea7b0321.jpg",
+      "19-proudfoot-rise-taylor-act-2913-54058-image-0-20220506061628884201-crop-c0-5__0-5-800x600_png.rf.994873cddbff41f648678f4b223900b4.jpg",
+      "1916895173152492135_jpg.rf.d6818b756badae179bc22b8b6a84da16.jpg",
+      "1978762_2581d810a4f3c5396681d9d8b3add1c7_65bd745cbd63f_jpg.rf.2c423f57b5840ea6a2d0072c2c98ba83.jpg",
+      "1990328cx_jpg.rf.dc34146606ec28605fd60521949c8827.jpg",
+      "1_Basement_jpg.rf.07a2c7939a0dc6bcbb18e2f70cf46037.jpg",
+      "1bd-min_jpeg.rf.ecda4058a63cc1c0d5c4a2bb8f83b25b.jpg",
+      "1c04094dcb417e13f4f9d13adf246e15-cc_ft_960_jpg.rf.c42088b14706b4479a176b74ef4a53a9.jpg",
+      "1d19b3abe5cc965b1713335c877b5cd6-full_jpg.rf.de4f245a2cb944bbf2ebf93b97ee5f50.jpg",
+      "1st-11_jpg.rf.bb9632151e9807feb4322a42b2a8b15a.jpg",
+      "1st-Floor_jpg.rf.a6237312e9d42e8f76291833ef7df53e.jpg",
+      "1st-floor-1-_jpg.rf.591d2eccb997b82ea6c2a785560be4fb.jpg",
+      "1st-floor_51_2117097-167414330246609_jpg.rf.099813927ced66c8b58c85af0c1b6aa1.jpg",
+      "2-15451209_jpeg.rf.d38e8122775d23a888f27437a4b283a4.jpg",
+      "2-BR-Level-2-scaled_jpg.rf.da27727cc16208409d6f5d4aad2528f4.jpg",
+      "2-bedroom-granny-flat-Alpine-Floor-Plan-16m-x-4_2m_jpeg.rf.4a18850f6ffd815d3f257380f94b89bd.jpg",
+      "2-bedroom-granny-flat-Designer-Floor-Plan-13_5m-x-4_0m_jpeg.rf.ae2102807ad34cdad9a861ccfed22a7d.jpg",
+      "2-eco-home_blogLarge_jpeg.rf.3ddf5bcabb83901e505788c26b6b9852.jpg",
+      "2-story-residential-house-plan_jpeg.rf.a2c6eed5c7b46d954a9bfb5c8fc5bc99.jpg",
+      "2013-12-05_vjy-updated-pr-vh-b01-a2001-cd-011_jpg.rf.818c8232c2a1257ad28e5f509becb146.jpg",
+      "2015-05-24_Parkview-Electric-Revisions-2nd_jpg.rf.dfa39611ecf48be2965be84da8f3b551.jpg",
+      "2017264_5599f1b1f8154ed81103251e66a6edce_66bce1e787556_jpg.rf.563189dce25e5945fc5873b5767215b6.jpg",
+      "201Maclaren-Unit1-2_jpg.rf.2de6d72c748dcd2e53e7106cb103d7c6.jpg",
+      "2022_03_14_Portfolio_adds_SHORTER-1_20221116114338__d9f5a43a_jpg.rf.ca37907a4735116152c78eee034073a4.jpg",
+      "202424047_3_jpg.rf.1909d002dcca8d7c65619132e771ead7.jpg",
+      "202501562-8acdc720-1e21-428c-842e-a0c9d54e2c68_jpg.rf.63cded34b75037614bd8c5e79036332b.jpg",
+      "20319646-0a2e-44e5-8f6d-2d64e80c3444_jpg.rf.c93a0679d5acfff0bfe8f51fe6a921a0.jpg",
+      "20d98cb8a2e14e864332e4a9237da384-full_jpg.rf.7b757ab0f55d35f8b9f94151604ae8cb.jpg",
+      "20x40-Floor-Plan-Sample-3bd-2-bth_jpeg.rf.4e3c514b04614fbf7e8af8a3e5aae1f0.jpg",
+      "217-Hugo-Street-floor-plan-by-Ice-Design-Inc_jpg.rf.a77b5016115ae7a92ded556eb1dca107.jpg",
+      "21eded0873696eadc2888a9a0e41895b_jpeg.rf.4c948cab39cf33f9527a8c28ccb0ece6.jpg",
+      "22-x-40-2024-jordan-house-Floor-Plan_page-0001-scaled_jpeg.rf.6bcd685018ab6790b89af6719ac38670.jpg",
+      "22203411188_96977a422d_jpg.rf.b835ab8ebe95ca30c5393f592b9486b3.jpg",
+      "22520-W_-Uhea-4_jpg.rf.8e91fa9f96595f1bcd5eaf188bb5f4bd.jpg",
+      "238_25021385_04_jpg.rf.3dec52df425ae7939a40541d1b6ed169.jpg",
+      "23x34-simple-floor-plans-ground-1148_jpeg.rf.253594a1d070d0483ad1b0be81a99702.jpg",
+      "245b480e0b38016c8bc0459d1af1022e-d_d_jpg.rf.1eb4c4bec25885686a80c1174521e79a.jpg",
+      "24647571_1_lg_jpg.rf.66febf58b0267f5a1f32f9d8320e355f.jpg",
+      "24686157_47_lg_jpg.rf.0df57bb82552f5cb921c47fcca71a524.jpg",
+      "24740499_4_lg_jpg.rf.b2b8a54881ae4d411d8af27a5185b6ec.jpg",
+      "2513-Irving-Street-floor-plans-illustration-by-LPAS-Architecture-Design_jpg.rf.d35d0605b5563c5c1c60d3da3d65ec85.jpg",
+      "251fdrxt_jpg.rf.a144699183faf3a90a5303ba9f1fd939.jpg",
+      "2560efb4eb7f97a28dd3d0749c7ec5bc_jpg.rf.bd7b99affb24ece030d6374bfb96540e.jpg",
+      "263625b44b8232f478291609c421af63_jpg.rf.53bbf8bcf160ea599ae894ea21e06a0c.jpg",
+      "2BedroomsHousePlanDrawingDownloadDWGFileFriApr2021115623_jpeg.rf.46309ce72bf21d559e7386436c749d7a.jpg",
+      "2D-House-Plan-Design_jpeg.rf.66f525f6860175e1b65a59dde429689e.jpg",
+      "2D-floor-plan-room-dimensions_jpeg.rf.686bbe2675c4272c2c8d2cf5eb7f32f5.jpg",
+      "2d-house-floor-plan-by-arch_mazharul_jpg.rf.a55e1515c64775a0f53393d49eb47376.jpg",
+      "2dccc5a7d87212b7f478aa8bafc3f2e9_jpg.rf.d55f909b52996b5098aed2a493a63679.jpg",
+      "2ndfloor_jpg.rf.1db2a72b990ed178a27a698fb5675f41.jpg",
+      "3-bedroom-with-backyard-floor-plan_jpeg.rf.d0a5f44283fc8f22ae6e894f49de5a29.jpg",
+      "30X50-2-bedroom-north-facing-2bhk-900sft-small-house-design-as-per-vastu-floor-plan-houzone_jpg.rf.4306ce782ab329f2ada2f30472219ccc.jpg",
+      "30x60-online-house-plan-design-ground1074_jpg.rf.dc01283bed77237525f79c42927f3337.jpg",
+      "315891588ff3718e48e7a19f4107954b_png.rf.52d8a0ccc07056d49d09d21b0f97204a.jpg",
+      "318_25-1177_08_jpg.rf.a5cab21eb39bdb25eceb877019ea966d.jpg",
+      "31fed59279581_5602d9cd43044_jpg.rf.c8254973d7964d8ded2f01799d0f4be0.jpg",
+      "3214-16-24th-Street-Floor-Plans_jpg.rf.410f9d07e67be39d125bdf25f88cdd3b.jpg",
+      "3259-ground-floor_jpg.rf.9ef798f840c6fb9eaad0c2e1596ff5c0.jpg",
+      "32x52_Page_3_jpg.rf.bbea3f0fd1d3eba0f2186cd2b5bb616c.jpg",
+      "3445864_orig_jpg.rf.cdeac8a88e55831a244bf80836eafecd.jpg",
+      "360_F_613441710_NNe3qybsDrG7aWffWU9nS4VlcILVK47W_jpg.rf.e60b1fe12106524d852a364b8a750f89.jpg",
+      "371ce2ba1734c1cc113e48bf4137d65fe562b2ae_jpeg.rf.fa412e6a1a69a48598e74b14369c5e5c.jpg",
+      "3741481058_1ab78fb402_z_jpg.rf.d5066762e946bfbbf697d35daed93418.jpg",
+      "3815-8th-St-SW-Main_png.rf.106a9ddb2705944b428cb55679292511.jpg",
+      "381sqft-garage-conversion-adu_orig_jpeg.rf.86976128167764ddfc4849314f2232af.jpg",
+      "39C-3BR-GARDEN-1024x993_jpeg.rf.5dda23c171ada0d19d6bffa2d615af98.jpg",
+      "39da47b1_jpeg.rf.2d470b1a617d9930e5969690163c393c.jpg",
+      "3DFB2B515E3A45B2A0DD3CCC70EB5FA7_jpg.rf.43e02ea94dcdea1ef4e7900e9078542d.jpg",
+      "3b222e3f6153927c558152293c25f416-cc_ft_1536_jpg.rf.1408d7f85c4ecee75279a02d390a6abd.jpg",
+      "3c632a02-7186-48b4-b073-8ca9a6afc9e8_jpg.rf.d8c6d4ff9da95085b3e5883a9cedc3da.jpg",
+      "3e300678c6088c5973dfdb708498c1f5_jpeg.rf.78d89f575ddfe9328128604845846618.jpg",
+      "3ecedb4524b1d230d5180df1dc105730-cc_ft_960_jpg.rf.be83d885f72921da8d9ad014f2de9972.jpg",
+      "40141_1667257926_2nd-floor_JPG-700x486_jpg.rf.c912c8d4adc54884a47edd4486987223.jpg",
+      "40X60FeetApartmentFloorPlanAutoCADDrawingDownloadDWGFileMonApr2021045504_jpg.rf.e91ed520cace4227f03fc4f78fd487ba.jpg",
+      "41ce9fa7e141ecb159685618c0261ce0_jpg.rf.3b9804e102520ae9409abf65df456881.jpg",
+      "42e27044cc9faf55eeafaf097a39f902_jpeg.rf.183d9fb622ebf96b4704ccb416b12ade.jpg",
+      "448893242f826a8536908ef32a3fa66a-cc_ft_960_jpg.rf.a1f0336e44ecaded650b05ff79834980.jpg",
+      "4494cec9cf28088743891fb3ec579b0d-full_jpg.rf.7113134b3bc6bd47418f766f191389da.jpg",
+      "46776468-9eb1-4c21-84c2-c4bcad81dac0-160719195420-thumbnail_jpg.rf.06807f3c710dd534dadcd3e835d5dae9.jpg",
+      "46_A2214458_08_jpg.rf.e4a066be2dce006d03f8050c2a4e639e.jpg",
+      "48qhxrqetlwrflueowt46jq2xhxfxdnc_jpeg.rf.a43aa859a0c74f79979f75aa1a48dc0f.jpg",
+      "49688624crop1600x1000_jpg.rf.a1754e77e0fd07157d778d88ed9d4caa.jpg",
+      "4_jpeg.rf.62757685789c54a49f0d606aee11beed.jpg",
+      "4_jpg.rf.f5ed17e8c3a12e0949046aa68f826cd3.jpg",
+      "4b26a914528f81cc9197c71e6d6c1833_jpg.rf.270e8d92794788f9f8d37a627ec33cf2.jpg",
+      "4c62ccc9-7046-477a-adc2-888e57989cc6-160106194806-thumbnail_jpg.rf.3c6b352fdb431d9b3d79da12b829a515.jpg",
+      "5-10_jpg.rf.0169fb8cf467097a814a60c1e8824ef6.jpg",
+      "502-floor-plan-art-750_jpeg.rf.d8fcda1394e2e4f06ef986a70a292692.jpg",
+      "510c6202be9751690aa1b4afd3170c39_jpg.rf.c69a29b782911708959182204fc30d5e.jpg",
+      "59a826579769c88f242adb6128be89c5_jpeg.rf.04155325936f0a69044ca80a14789407.jpg",
+      "5_jpeg.rf.482db2a381fd3d88021ce555d659b69e.jpg",
+      "5_willow_second_floor-01_jpg.rf.ea1d382b4c979a94fe68429916f7f03b.jpg",
+      "5a122b4e_jpeg.rf.4529c6539e1f7cd197dc70985efd031b.jpg",
+      "5fa849f9970d1bd0aac84f8863385e04657c3076_png.rf.b6ba053e46bb4ba68d8a28b5df0d57e2.jpg",
+      "6092219e121697415d155a2873c5d2bb_jpg.rf.604b910e8051eb62717a4dfae6747efd.jpg",
+      "60f6043cee924aa524eff303_2_jpg.rf.2fdac75c19391ed3c8cce9e852401810.jpg",
+      "6271c552b05575c4df49885f73576d9b_jpg.rf.787b3d8b400d7bae8e6437dc0f4973bc.jpg",
+      "628529_q49qzg_ntvcht4uoxz0qciyhn_png.rf.237bf4c9fc22813f706892da9c281b86.jpg",
+      "628529_zffaey_5jmdfwcbzsphi9b6lc_png.rf.e0ad4f4a4d7bd650089e5ef63f0f6dcb.jpg",
+      "62ad41a78739d52f903d4a7fb1a12c64_jpg.rf.117e05b372ad79496309fe39aa68f99b.jpg",
+      "643x0w_jpeg.rf.f20cc5fbf08111ec535d5aff8a9dcfb2.jpg",
+      "65bf549d0fdff1ebf0eacc4f_Floorplan-2_jpg.rf.562fe6f54fa370d2e21655680aafdecc.jpg",
+      "6731488_orig_jpg.rf.588e2ade5504f03edcf91ba5addd32da.jpg",
+      "690e3965c60a4810db41961986d348b5_jpeg.rf.f44f6e9c99fff511d0bbce4d3df18941.jpg",
+      "6940971_orig_jpg.rf.8028188e3a11c67ead864eb7034d57c4.jpg",
+      "6d737bcd224c41adbd832785d145c53d_jpeg.rf.a7aa35104892e2e7488af27299ae683c.jpg",
+      "6e2c319c340a91f5c9d514fe46600bec-full_jpg.rf.a0c1facefdb5fe1662e70f5799f8a994.jpg",
+      "6eb2aa41bc988875ba6655d7e386c2b3-full_jpg.rf.c9760fd43452718f8695ec9dcbcea820.jpg",
+      "6ebe142442a367a2220c99c0cd7826a2_jpeg.rf.ffc779227dd6d89335a2885f7c1e51d2.jpg",
+      "6f77eb41c94a605b604f773baa3e0e2d_jpeg.rf.f0f7f73516f723d4f64555c264a8a695.jpg",
+      "6fedfb6438f0e32d57a6f17cb57e7293_hd_jpeg.rf.f8ede3c47ece6d81bb86fa0bb7374d8d.jpg",
+      "7-minott-road-hillsborough-nh-03244_jpg.rf.e6f795591c01e5d415066464fb5e698a.jpg",
+      "7012091_jpg.rf.1746f55ecb70318e925eb8112f899cc0.jpg",
+      "709Whitehead-07-961x648_jpg.rf.fd91e5d5de2d87f2215031e874af677c.jpg",
+      "72321E64-1707-4173-8164-E4F538A62CDA-1024x723_jpeg.rf.64184cafd17d2746c0cd0dc8fa43c4b1.jpg",
+      "7263501_orig_jpg.rf.3a49a6657d92789d24be18ab208e5323.jpg",
+      "72908DA_F2_1697479364_jpeg.rf.ecbc6dda6e9295568a4a95b57a66d0b3.jpg",
+      "72e77e4de1af13279284b257fd77d05d-cc_ft_960_jpeg.rf.d7f5d070446083206fc1959f920f26fe.jpg",
+      "7519299_orig_jpg.rf.609fe3fff46cc1370f03f1d988649de1.jpg",
+      "7597ef1a491c01d2f34c552573c3bfa2_jpg.rf.30f0953579ffdcb726fd5b1a86113e82.jpg",
+      "77413-1l-1024x836_jpeg.rf.a2b7273e789705ee1d265b263dd12b1f.jpg",
+      "777c46bc9ff570cfd217706423012975_jpeg.rf.7e11ee6793dc5e187d745bfb480b2bb7.jpg",
+      "78506ab0_jpg.rf.8bd83e6efc78da16d0a68185020e964d.jpg",
+      "7856402_orig_jpg.rf.021e72c625b681bb7c9e4439c17a4ad9.jpg",
+      "785825-2_jpg.rf.223a28710cc73ed08aa88310321a4318.jpg",
+      "78f1964b12d9a26daa8973f90b160272-cc_ft_960_jpg.rf.27b34db17cab7a318aa3fbcaf2bf665e.jpg",
+      "7be25c24e7e6ed347eef4f26078c7b09-cc_ft_960_jpg.rf.2d6329159369a09802335af0e6e95480.jpg",
+      "7c9d85136c2adcb250a697a259ba815d_jpeg.rf.0334f127c1e41b6bd837add860f6a2f3.jpg",
+      "8-CD_jpg.rf.6d918918068f74d372c459cc25fccc91.jpg",
+      "801-Avon-second-floor-plan_jpg.rf.9cb56628fe54da6346e2b35c03d1ee31.jpg",
+      "810d2067077709f585a5cc18d75ac2d1-cc_ft_960_jpg.rf.fc839b231723d81e13090cda3a209b5a.jpg",
+      "83733dc0-9cfe-ae4c-a7bc-ba9028b71f30_jpeg.rf.3a840dee199ff677cf780d6651722c88.jpg",
+      "87246038_jpg.rf.2eab413c30342dfeb4a9709c335acb72.jpg",
+      "87910500_jpg.rf.e62c43d01a32a5df2df1d89e30a0f3d2.jpg",
+      "87c253a0b9e8ab39f392ae059d701489_jpg.rf.3df807766ef310bbf7f6da1e4a433119.jpg",
+      "88548bef_jpeg.rf.bb9709f727d41eec795b1df1eb9237e5.jpg",
+      "89572099-02ad-5556-accf-86e8ecf3785e_jpeg.rf.ae75dd77a6a6078ae532294fe1fd238d.jpg",
+      "8ae6fe6510325a5d790adbbb21d97df8-cc_ft_960_jpg.rf.8365a299b8a93a14036d1a8769b45e82.jpg",
+      "8d0b11f7112eae95edaae4c6a6faeea5_jpg.rf.f75f23cc438eddd77005002004ce2f63.jpg",
+      "8da1e217cacba941631df2895b889bd6_jpg.rf.5eaa870818c480cc7257c37c1a53a824.jpg",
+      "8ee5e305f43123b3f1f4ce93aa278b60_jpg.rf.32d75082bd1f4113725d72914409c386.jpg",
+      "916ad15dff10cdf9087b58f4fc2c6673_jpeg.rf.174fb0bf416e68e786e762aef38a186a.jpg",
+      "9407246ba760e2df0ca3730e5ec093d9_jpg.rf.a75e906f2fa59c01dea8037551ee6f0a.jpg",
+      "949-Sayers-Road-Tarneit-VIC-3029_jpg.rf.4a56dc2593dd74a3ad1226679d9c57ce.jpg",
+      "9582896_orig_jpg.rf.c77d5f0e90321025a5427fc753f1d161.jpg",
+      "95f2a3e8_jpeg.rf.147c1051255c941093874eacf9f7801c.jpg",
+      "96-Bedfordview-Type-D_page-0001-1024x638_jpg.rf.258bf356f238ca5c2db320c2907b0c1a.jpg",
+      "96f54ae04b25bdbdf711746e9a97d5d6_jpg.rf.ca5c485a6e9794c81122fdfecd1a779c.jpg",
+      "983de4a08f9f65abdeeec19f918a093e_jpg.rf.ff2326326928add95de1805c8510947f.jpg",
+      "9844558493_df7fd1b1c4_z_jpg.rf.f13158be68954bb1de061d522fcb2005.jpg",
+      "991-Howard-Street-third-level-floor-plan-illustration-by-APIC-Designs-Inc_jpg.rf.3e4af3628701c230e0a6433eca41ded0.jpg",
+      "99_27313265_4_jpg.rf.ba96e3ff63187d55bcdb36685965d077.jpg",
+      "99a1945517b77f3522a7f0ace8ba31d1-cc_ft_960_jpg.rf.931d45de4f05360ab68b2571a36fdd25.jpg",
+      "9e594402ce0cdad7fff3f18c13ce3fa1-cc_ft_960_jpg.rf.3bfb289aa06e4819b7777e71f60cc7b5.jpg",
+      "9e95a119a13157648e6676e4f19fb579-cc_ft_960_jpg.rf.85e62cb14fe778489f1e7ef69acfcbf0.jpg",
+      "A-1_jpg.rf.5d33c1553bf505dba224059d2080eca6.jpg",
+      "A101-First-Floor-Master-Plan-10_08-A101_jpg.rf.57033ce6f5e5db8b154abd88228a9e2b.jpg",
+      "A101_jpg.rf.01bf9f4428ac8c1e559254a2184099ec.jpg",
+      "A1995-Artoo-Design-S2dio-Inc_-15-Iconic-Projects-Image-57_jpg.rf.1798c4b321d9ae37c7fde86926eb5206.jpg",
+      "Acrobat_bbesCVBqTY_png.rf.78ede2829e57c47e124e3d8620f422e7.jpg",
+      "Architects-in-Newport-_jpg.rf.2646f6f56c435d0a762f1c3c9e34af23.jpg",
+      "ArchitecturalBuildingGroundFloorPlanWithDimensionDWGWedJan2020050045_jpg.rf.b701100f4abbdb3ba5e997eccd92df20.jpg",
+      "Architecture-Apartment-House-AutoCAD-Plan-With-Dimension-DWG-File-Thu-Dec-2019-01-30-07_jpg.rf.bf8db4655851400bcfc58b0b0b5e6651.jpg",
+      "Architecturehouseplanisgiveninthis2DAutocadDWGdrawingfileDownloadtheAutocad2DdrawingfileTueOct2020025737_png.rf.b882920a4f4888aec6508fe1ecc4f9c0.jpg",
+      "AutoCADHouseArchitecturePlanDrawingDownloadDWGFileTueApr2021043548_png.rf.6dcad9e5243f98e2b5304f0b717240b5.jpg",
+      "Blueprint2-scaled_jpg.rf.22f09bfcdc1a70c3075814b94ee13e44.jpg",
+      "Building-Framing-Takeoff-in-Columbia-SC_png.rf.0e4b5f5220bfbed2c787ef037e316883.jpg",
+      "C1_jpg.rf.8d69611e1783648bb057e4aac92fba58.jpg",
+      "CAO_BALWYN_LANDSCAPE_CONCEPT-scaled-1_jpg.rf.6c29e3b1016438f31c8b91e57c80d42a.jpg",
+      "CONSTRUCTION-DOCS_jpg.rf.191d798c0a7bba54accdc46cab6d5287.jpg",
+      "C_jpg.rf.92636f99b712d9262e68bbd544250fe0.jpg",
+      "Carrington-III-Main-scaled_jpg.rf.492b7e885c7265b7f24accb8cf83be47.jpg",
+      "City-of-El-Cajon-Standard-Plans-2-Bedroom-800-SF_jpg.rf.bd7af196bf8f44a134965f52a974a480.jpg",
+      "ClinicProjectElectricalLayoutPlanAutoCADDrawingDownloadDWGFileWedJan2021055713_png.rf.15c8343c0827a6e9587501dffc6bdaf2.jpg",
+      "Construction-Documents-Opt1-scaled_jpg.rf.bc71bc58bccd84d7c4abc271005a3aa9.jpg",
+      "Construction-Drawings-e1639985403494_jpg.rf.7f7bfa27f84aca2cab3c0bd34282e516.jpg",
+      "Constuction-Document-Drawings_png.rf.7ac712c4ce0f930d56530dc1ce37f794.jpg",
+      "Contemporary-Residence-Multi-Room-Tile-Integration-16-1_jpg.rf.3438e250f19fa20f5e3ccaf87136f9ef.jpg",
+      "Dimension-lines-and-general-plan_jpg.rf.53a752c02bc1fb9420e5d57d5555e220.jpg",
+      "E4182915_11_0_jpg.rf.abaa5724e73721398418f2a8b1acb8f0.jpg",
+      "E4417357_16_jpg.rf.66d8f14ecac86d1f0fac23f664f861d4.jpg",
+      "E4432844_3_jpg.rf.3df96a50401fff645ae5acaee3592a15.jpg",
+      "E4434452_4_jpg.rf.748d14fba9de6be33ef1e2e24a1412da.jpg",
+      "EB-NU6135_jpeg.rf.8cb58626d72b20822050f269b1d0526a.jpg",
+      "Electrical-Plan-1024x832_jpg.rf.1f3ffe415b5e9b98e578317707736878.jpg",
+      "Electrical-plan_png.rf.d32fd221f2163736870eb304e40dc825.jpg",
+      "Farmhouse_Drawing_Set_V-001_pdf_jpg.rf.62fc5e070014a623fe5b76622c0110c2.jpg",
+      "Floor-Plan-4_jpg.rf.993767a53b258b49b020488a1df122ca.jpg",
+      "Floor-Plan-A_Page_2-scaled_jpg.rf.01f98d37b1890ba46d4368ce9383d303.jpg",
+      "Floor-Plan-Robson-page-001-1_jpg.rf.d2131f231e31bfb946baca1bd13a60cd.jpg",
+      "FloorPlan-1080x641-1-_jpg.rf.260e0e1e1df15dff4e6d4d26848500d3.jpg",
+      "Fort-Plain_png.rf.ff5f47fbbec835e142fca7ff6be9cb79.jpg",
+      "Ground-Floor-Plan_jpg.rf.639d83283457479c5dabc0fc66764603.jpg",
+      "House-drawing-3-1024x649_jpg.rf.56497a2a175425823c98e03151143038.jpg",
+      "ID12220-FloorPlan_jpeg.rf.3867af78ad77e73f28b2b0e332aa6ef4.jpg",
+      "Jacaranda_House_Site_Plan_jpg.rf.9a75d3879b296ba9f6e0444bbba15e01.jpg",
+      "LITE-FP-CUT-768x588_jpeg.rf.51ba7c0209ee60b343116554c43f65cb.jpg",
+      "Layout-plan-1_jpeg.rf.a52bee7896f92c4259b7d4b33d8e3f24.jpg",
+      "Main-Floor-Plan-2_jpg.rf.91c73df43e5201652c2b7a53c9b8f938.jpg",
+      "Mary-Lane-Place-SnapADU-2BR2BA-1199-sf-Build-Ready-PreApproved-in-Escondido_jpeg.rf.1f671c84f3d7abff205013a834f5ce53.jpg",
+      "Modern-House-Drawings-Bob-Borson-A201_jpg.rf.4333c15bab21bd317f2973119deee267.jpg",
+      "Modern-House-Drawings-Bob-Borson-A201_jpg.rf.d47d3074d00ff31fa92ffe9b2b20635c.jpg",
+      "ModernHouseFloorPlanWithDimensionsAutoCADFileThuApr2020070449_jpg.rf.d1c43dd92d3fb6a908e6188c80deeb3c.jpg",
+      "Office-JPEG-1_jpg.rf.60f713f4c8b90ac4fcd09208acbb9565.jpg",
+      "P-02_jpg.rf.b3eff52ae4aa33de417e58c37634d684.jpg",
+      "PL-64003-Vivian-Barndominium-House-Plan-1024x803_png.rf.0b54c55a3542fa803234f730eca620e0.jpg",
+      "PL-71005-Vista-Barndominium-Floor-Plan-1024x729_png_jpg.rf.c28438de42289fb82757869b90b776b8.jpg",
+      "PL-71010-Croft-Barndominium-Floor-Plan-942x1024_png_jpeg.rf.02cb908021576848e42ffeb075418bf5.jpg",
+      "PLAN05-1024x683_jpg.rf.836f2f646d04b241b8cc4f3e010ae826.jpg",
+      "PREPLAN6-e1421027315423_jpg.rf.bce730c8e2c4b49d06bf02afc912ca1e.jpg",
+      "Plan-2Bed-cropped-1024x795_jpeg.rf.96a832516a4aa5b1fb07aa07ee83ac7c.jpg",
+      "Plan_jpg.rf.1a182d772521f29493bf45cdf1e9da4c.jpg",
+      "RD8pHcmt4qUnwV0YDdgUuSNN4_jpg.rf.dfcc342221e427b53355b4980fbbd324.jpg",
+      "RPA_Campbell_Plan2_080521_jpg.rf.5778f9789a6a0c2476a9d635ae4575ea.jpg",
+      "RUD1STFLR_jpg.rf.61b80ea91c06a2bad07bd9bc3a7d4ff5.jpg",
+      "RX_11086441_P69_png.rf.733f6ad67af5f30c19f1d34fa0e113af.jpg",
+      "Riverside-Floor-Plan-MF-Dan-Clayton-New-Home-Builder-Guelph_png.rf.a35586e48b936cd3e57428877ae7e92a.jpg",
+      "SK13_-Issue-D4_jpg.rf.d6a4f6b3b0d412229265e2c238bbed0d.jpg",
+      "S_HOUSE_SECOND_FLOOR_PLAN_jpeg.rf.6dbbf348f48e7d299ca3c55e1da8a975.jpg",
+      "Screen-Shot-2019-11-01-at-11_20_41-AM_jpeg.rf.78b5749dc99373328adacd1aeeeb2b9b.jpg",
+      "Screen-Shot-2022-09-15-at-9_08_12-AM_png.rf.d274e27f781069f4fce98a9ffe189965.jpg",
+      "Screen_Shot_2023-12-07_at_7_11_28_PM_2260x_jpg.rf.c3949cca9dabf7163a6f945abaef90ef.jpg",
+      "Screenshot-2024-03-04-204850_jpeg.rf.d4fcecabf6c2205499c06f9ce63c54a4.jpg",
+      "Screenshot-2024-11-12-143103-1_png.rf.f79cbd41a720012c813b75415f6fc4be.jpg",
+      "Screenshot-2025-03-14-170545_png.rf.b7868a360fa4a9d0233de0a8ea7bbf5b.jpg",
+      "Side_extension-02_png.rf.8732b92873f91cbc62000059f1218d56.jpg",
+      "Simple-Floor-Plan-Design-AutoCAD-File-Free-Wed-Nov-2019-12-45-00_jpeg.rf.336e7061ef7d6943ed1796e276b7114a.jpg",
+      "Simple-House-Design-10x8-Meter-27x34-Feet-3-Beds-layout-floor-plan_jpeg.rf.87ec2b1036249d18f1f9612adbf2be97.jpg",
+      "Simple-Small-House-Design-7x6-Meter-23x20-Feet-2-Beds-layout-floor-plan_jpeg.rf.fb834ab4bec4d9de9dfc3ff27b534d20.jpg",
+      "Singlestorygroundfloor3bhkhouseplanofthesizes24X45DownloadAutocadDWGfileWedApr2020102548_jpg.rf.b8e36ad69b5ec193dd85a4a37829827a.jpg",
+      "Small-3-Bedroom-House-Floor-Plans-For-Sale-House-Designs-in-South-Africa-Nethouseplans-31-800x467_jpeg.rf.0f26065cd7ffd63cc787c21edec5605c.jpg",
+      "Small-House-Design-Plans-6_5x8_5-with-2-Bedrooms-Hip-roof-plan-scaled_jpeg.rf.fb1cd8fc61b32ead3db7490613ee9828.jpg",
+      "Snap-ADU-Encinitas-San-Dieguito-Drive-Custom-842-sqft-2BR-1BA-floor-plan_jpeg.rf.327471b0ad9385174d808327ffd2a5ee.jpg",
+      "Snap-ADU-Floor-Plans-4BR-4BA-1445-SF-42x17-Duplex-Build-Ready-1_jpeg.rf.488daa412ee9c948a435843701d7cd46.jpg",
+      "Snap-ADU-Rancho-Santa-Fe-Rancho-La-Cima-Drive-Custom-1199-sqft-2BR-2BA-Floor-Plan-V2_jpeg.rf.f531cf0e08ad8b85158f20d1aafb7757.jpg",
+      "Snap-ADU-San-Diego-Cherokee-Ave-Custom-Two-Story-1445-sqft-4BR-4BA-Floor-Plan-First-Floor_jpeg.rf.3ac3a7352ecc4228883db76c27472d6a.jpg",
+      "Snap-ADU-Santee-El-Nopal-798-sqft-2BR-2BA-V2-Floor-Plan_jpeg.rf.af6df902f9a7e3a92b95706d300e0a3c.jpg",
+      "SnapADU-2BR2BA-1199-SF-L-Shaped-with-Garage_jpeg.rf.03c169631420c8b0ac0381ef75f5e7e4.jpg",
+      "SnapADU-3BR2BA-1196-sf-build-ready_jpeg.rf.c09cff72b33f7e9028a460ce36194f76.jpg",
+      "Tobias-house-plan1356-first-floor-plan_jpeg.rf.33881245b8a42f53114198f918434a12.jpg",
+      "Torrance_Lake_Muskoka3_png.rf.1dfeacadbd84b8f58c3a8adccc5d1c0c.jpg",
+      "Tri-Level-Plans_Artboard-Basement_jpg.rf.9ca474f302c9aac4b09eb307cbe55dac.jpg",
+      "Untitled-10_jpeg.rf.39981fc16e3aeaec537d3885fc6ed2c2.jpg",
+      "Untitled-1_0008_ABD9-1024x440_jpg.rf.607ddb0908fe80378aefcd7cdcb20c96.jpg",
+      "Website-C1802-Sheet-A03c-Level-2-FloorDimensioning-Plan-pdf_jpg.rf.6ac86012fc907bdd2562c000d4b7cb41.jpg",
+      "WhatsApp-Image-2024-07-18-at-11_13_00-AM-4-592x444_jpeg.rf.c6492d07835d1f549e912d74c39ec148.jpg",
+      "_-1-_jpg.rf.8a8b94e6df8319e677154972732f661c.jpg",
+      "_-2-_jpg.rf.25dc5f6edd1143c09797bac714992564.jpg",
+      "__jpeg.rf.0ad4c08a7c630eb0561cda86a7f70fa4.jpg",
+      "__jpg.rf.969f13ef61635035d1e8e20e47e2b900.jpg",
+      "a0e84b6d94136eba2bf7a054b569834b-se_large_800_400_jpeg.rf.64935aa35d34880b80d2ddc2403a7f20.jpg",
+      "a2811-basement-promo-floor-plan_m_jpeg.rf.75c2e16053d7756b2db34ea785e897d5.jpg",
+      "a3d972134c1732ad3ea84917ee92c7c1-cc_ft_960_jpg.rf.3ab1b41debe9a6ada4e267cb5526b0db.jpg",
+      "a4db97c422317a938332c955ecaada3c_jpg.rf.75a155839064480c349f6c115852fb60.jpg",
+      "a7c45c2c9caf4c73d51964903215e113-cc_ft_960_jpg.rf.3044b03655f9b7970fea3d676e11515a.jpg",
+      "a820a8f2e45f995db3fd4ca48ab20059_jpg.rf.7f862d004e2ebccf5f136eeb09069ddc.jpg",
+      "a97o9o5ljm4wg3fj9yopa3rhvkuxg6tv_png.rf.cb8ecbd972dc4b7e934b76925ac9204d.jpg",
+      "ach-input-drawing-2-problem_png.rf.13be9a55a08d8c93a3d9e48f79dbd315.jpg",
+      "ara-aliabadi-arash-aliabadi-mehr-project-residential-landscape-archello_1635415663_6729_jpeg.rf.1096ec84d28aac84d91db666bacebd5a.jpg",
+      "architectural-plan-small-studio-apartment_jpeg.rf.2b02dec3b50d92d26830e1207e7e30b7.jpg",
+      "autocad-example-of-a-floor-plan-1_jpg.rf.26e4cca4688adaa87cbcf2a07223b8c2.jpg",
+      "b4b9cbefbfd4b1a37fafc6c1ad648bf8-cc_ft_960_jpg.rf.233931904962a8ecede5ecf5ebc34cd1.jpg",
+      "b52gahpig7j81_png.rf.b341eedeb8dfd2e10ef8e013a7d8b23e.jpg",
+      "b779a209f13a33a64f1439d5433e0ac0-f_b_jpeg.rf.91e4ad84a31142f31cfe06ad3fc0e7ac.jpg",
+      "b876dd13e4ac38a704f35636be41d8e1_jpeg.rf.2b6b782771f072a70335b2ddecf1711a.jpg",
+      "ba731aff-36d3-5621-9d3b-cf00dc41dd3d_jpeg.rf.0a6642b0332954e25067d8ebc943d6ec.jpg",
+      "bbd71b20-9f9b-4bf3-b0ab-00397da4c8a1-141215195344-conversion-gate02-thumbnail-1-_jpg.rf.ad99750bd55b512ff74f9681db9d4f92.jpg",
+      "bedroom-1-study-layout_orig_jpeg.rf.b06e60f02a95fc6d0072872d30e21962.jpg",
+      "berisha-home-drawing-768x490_jpg.rf.61ba50a20370df8e3f98629f1e4107a3.jpg",
+      "bonnie-brae-floor-plan-e1468347782651_jpeg.rf.f58ebc27087a19ce365a567444e1f313.jpg",
+      "building-flat-plan-with-furniture-isolated-white-background-stock-vector-illustration_985641-1633_jpeg.rf.50ec89ad46fb6a484d458283c622313b.jpg",
+      "c14a799eaf043ebf8ed46ca8e4e8f82c-cc_ft_960_jpg.rf.16514e8abacff114753ae7b6bc4c9ff0.jpg",
+      "c1f5df06e635af003103ee5739268492_jpeg.rf.db84ea99c39e8939120751bf43eedb24.jpg",
+      "c21c3e51-2091-46b1-bfa9-00bf2bdfd6d3_jpeg.rf.73d08356e6c90e27042b7c06b6bccf00.jpg",
+      "c2cd39f924f9b62fe626a8c53fdfa7fc-cc_ft_960_jpg.rf.90b8bda4d5b6f40d8929ba4285635349.jpg",
+      "c336a564a439118509f066f54a8d3169-cc_ft_960_jpg.rf.7c063241cd0f19205cf5649706ab9bac.jpg",
+      "c57d74e1e5614da592c11092b7f800f3-full_jpg.rf.10b78203091790841b902cd21cc22750.jpg",
+      "c6b01fa5f402f9b03f6063bb7209eaf2-1-_jpg.rf.e1f795bfd3176c8fd9a755ddfbfe7c10.jpg",
+      "c7e37cb06da7501941750815ad4118c2_jpg.rf.199a3f35474037f8f4424f38909570ad.jpg",
+      "c9d01e5eab60b7651751553eac648aa2-full_jpg.rf.814a36a5d05638419b7c9b7af1472aad.jpg",
+      "cad_drafting_software10_jpg.rf.c1eed9599e44dd36f3bde0dfc8ac3ff3.jpg",
+      "cdweuhsoaglc1_jpg.rf.a67a39f1aff4cd4a114c0c831c8c47cd.jpg",
+      "ciu1lmdrprzd1_jpeg.rf.e211af860b019d0c793e7a46df1e8f95.jpg",
+      "clz7pzpeq001f0cmh8a7lcrbv_png.rf.1ab3b6f4c81d162be65b6e56b3d0325a.jpg",
+      "construction-documents-2-full_jpg.rf.6ef421addf6b537e900442203c976e1a.jpg",
+      "cover_full_70ff13bd222d3af6ad141225c4810b2d_jpeg.rf.dfb332f6f674697d6b05c470f03f50f9.jpg",
+      "cr_jpeg.rf.0e050e5b71ff9869d15d7c98ddec8d5b.jpg",
+      "d063e40f22eba48bd5907e7ae0a218a5_jpeg.rf.2e9713394a1ff31916854cdf5b3e0327.jpg",
+      "d149c5f377f05e5b27241612becdb1d6-cc_ft_960_jpg.rf.037585286192258c388149ffbe0362df.jpg",
+      "d3ef084f823d10772899eac32dc3c8b2-cc_ft_960_jpg.rf.58fd3411768c83f92d5ce114e3f9f766.jpg",
+      "d5025ec1c32c224e572f3723bb71cf9c_jpg.rf.6695ffe8dcceed712a79d25bf5352213.jpg",
+      "d86bfe3922cc5660c1bad8efeec87445-cc_ft_960_jpg.rf.30955d549f962ed385cc4686023f7fd2.jpg",
+      "d9240ec1b8a9ea5f9fa87c2e9caf22ea_jpg.rf.022350e96c75d8ee473d9064fa76b1e0.jpg",
+      "da069f0cfce04e1790b46725b9f430d0-cc_ft_960_jpg.rf.cf65c7be75ab3d7c93bb65afabe3a250.jpg",
+      "dbc2adc939c47185a3ed8c40c4c19df3-cc_ft_960_jpg.rf.883671f7241db6b6e07148d86704a5da.jpg",
+      "dc96b0da57baa75db4b6e43a64c8ed32-cc_ft_960_jpg.rf.32cf3c31fd15861a930c3055f0f1025a.jpg",
+      "dcd85c60826899_5a5a8487f3d09_png.rf.13c4cddf8399c6f5bb01e8cc55e1c143.jpg",
+      "dd037ef5d7eb23a9dcda09fa86916b21-cc_ft_960_jpg.rf.397169b1e0d7faafddb6250887c06282.jpg",
+      "dd3b91c78fca31e2561ce56591dfcc90-cc_ft_960_jpg.rf.88d8fa38e4b1826e1c257da8c122f4c2.jpg",
+      "default-3-_jpg.rf.aa8382cae381e70ebc04954497f97560.jpg",
+      "default-9-_jpg.rf.30ed2bf3e5ebc53280fce64041d4ba2c.jpg",
+      "default_jpg.rf.9ac0c98d6d2a21da68480d4f11cfb0cb.jpg",
+      "difference-between-2D-floor-plans-and-3d-floor-plans_jpeg.rf.5e1c8a3aca18a7ac1f78ff419cea50b2.jpg",
+      "download-5-_jpeg.rf.da1a60b052d4e645bbf2aee0dd25b2f8.jpg",
+      "drafting-services-basement-floor-plan_jpg.rf.d23e54a1fc8b6b3ebeb8138cf92ba452.jpg",
+      "drafting-services-main-floor-plan_jpg.rf.0d7bae29b149e1df5a9529d4e7d3105c.jpg",
+      "e6f4bb138143147_62178a2a2782d_jpg.rf.163380b8a4cf4984e62d76f67604c878.jpg",
+      "e7131e44ff69c930ab7d018c8004a20b_jpeg.rf.84599811134eac385abee49935ad2f06.jpg",
+      "e8bfda5b298c962de82c36a06ba80f71-cc_ft_960_jpg.rf.0bc41d3b1cd44fd756e7c49275843d97.jpg",
+      "e_-floor-plan-1_png.rf.a7f3edb28c9292c0dbe3de14742242f9.jpg",
+      "eae4fe880e8e851f287bb0853d572609-full_jpg.rf.c2e3aa028c48b09cdd96e346e86b04f5.jpg",
+      "eb31ed1ad70aaae1e34327c4f6a3edbe_jpg.rf.890db708d45739a63aacd99fca37daf3.jpg",
+      "eca9f6eee47973001159f3be0534428f_jpg.rf.7236fe0bfaa6463b1aa97c27a40875f1.jpg",
+      "ecf7-H3036550-80816834__1707255692-7499-11_png.rf.36a51e2d822ae5e9907f63bd28c327a0.jpg",
+      "example24_jpeg.rf.5e92d9293128ac4a9269143daa5d5928.jpg",
+      "example4_jpeg.rf.dac650975d80abcfa6a3601aac4f03c9.jpg",
+      "example_of_a_floor_plan_construction_document_by_built4ever_ddb43nl-fullview_jpg.rf.1eb419964d34ab56b74e836d344e3c66.jpg",
+      "executive-5-bedroom-4-bathroom-3300-sqft-lincoln-ca-building-photo_png.rf.a2d55b55784fcbca0564d1c7edcbbfcc.jpg",
+      "f07e4d1b8e9b1c228856b72c9ae382d8-cc_ft_960_jpg.rf.150d63a866d984279951a224a9e816ba.jpg",
+      "f255de08a8a4eaab78c0165e6fe72e7c-22-thumb_jpg.rf.51eb6237356b4b1d785e6d358d7cd1ab.jpg",
+      "f29b70cb2d26885ec2a88fbade65a6fa_jpg.rf.2d7bb598bd3282ca60be79d5c111d938.jpg",
+      "f47a94a75dd2deb0ed34ba2df737f9a8-cc_ft_960_jpg.rf.7be0fddec3acaf2cf6f3d88d05086584.jpg",
+      "f9ab7d50-9702-4053-a3d6-bb26b75ce136_jpg.rf.9e3f0439a98f5050a6fda2323ea5ef09.jpg",
+      "family-basement-floor-plan_jpeg.rf.0ee2a71998881d059ed7c36e0777ac93.jpg",
+      "fcie1n4mepzd1_png.rf.35969852779f0e951021aa9b8632f4c1.jpg",
+      "figure_001_jpg.rf.6dce452ee3d019be2137b156c8b29430.jpg",
+      "figure_018_jpg.rf.2cfef00d02e09f10d8567925e8da5cf5.jpg",
+      "first-floor-plan_jpg.rf.05fb894d0facf15886d235de92c4bfbf.jpg",
+      "floor-plan-0-original_jpg.rf.ebdd88825df5426701f67fd144a777a4.jpg",
+      "floor-plan-1_jpeg.rf.e812c3dfeb076b1c5343a9d316d1a29e.jpg",
+      "floor-plan-elegant-1024x768_jpeg.rf.211f370aff72d1fca83cb4a5ad7791b9.jpg",
+      "floor-plan-l_jpg.rf.6f5ccc0b72d1082bb64eac7b25bd2c1e.jpg",
+      "floor_jpg.rf.a13faa0646fb29d7e076b5e399d2da5d.jpg",
+      "floorplan0_jpeg.rf.e4a373d0a16a80887338bc22e560bf9f.jpg",
+      "floorplan_jpeg.rf.95584bbe9880589a28c426005d6846bc.jpg",
+      "for_export_jpeg.rf.c70a7627f29409a6ffe00efb80d78a19.jpg",
+      "fp2-1-sandspur-trail-on-Bald-Head-Island-NC_jpg.rf.2cdccfdc727d68f6bb91e510af822bab.jpg",
+      "fully-dimensioned-plans-l_jpg.rf.71328445accd5a96a09544e31ccfcee9.jpg",
+      "genIslnoResize_202505480_1_jpg.rf.b5442f943db02c920fe616eead87a4d5.jpg",
+      "genIslnoResize_841312_1_0_jpg.rf.97072226dedf13627194a660b8f8e7ab.jpg",
+      "genMbmob_1176932_47_0_jpg.rf.373f62236cdb54d82b43c0c8ee59075a.jpg",
+      "genMbmob_2249493_15_2_jpg.rf.fc3ec68f17bab6546448a4b68158024c.jpg",
+      "genMbmob_576021_10_6_jpg.rf.7207e5d23014da4a185306b27d824c66.jpg",
+      "genMbmob_72618264_3_1_jpg.rf.fccea292bc0e3c7fb8e7bb370b5f703b.jpg",
+      "genMid_1989449_38_0_jpg.rf.9a26c17a986a3ebb69d7f9efc6c84e5d.jpg",
+      "genMid_5014023_1_1_jpg.rf.816e70fd60f345b06760d39a15a6a335.jpg",
+      "genMid_5014023_2_1_jpg.rf.dfc5dcdc991c9864af9519abcb7b42af.jpg",
+      "genMid_72641090_14_1_jpg.rf.9578d6b405df31ff9e0b4279d5db6682.jpg",
+      "genMid_72721034_37_6_jpg.rf.7fd2a53fec26bb97a4e455e89576dcac.jpg",
+      "genMid_72955899_3_1_jpg.rf.af8b0326476fe037b1efaf27c13d2474.jpg",
+      "genMid_73059261_31_0_jpg.rf.dd52436e32e3ade1649f14952e3fa81c.jpg",
+      "genMid_A10964264_1_jpg.rf.30fd5a31cfcc27d1ed37b7986ec901e6.jpg",
+      "genMid_MDWA2028528_2_0_jpg.rf.e9475f1f3f4a26c0c1880f585eec5c26.jpg",
+      "genMid_NJMX2008338_3_1_jpg.rf.547ae0aea89677067dbbef07a5ac9285.jpg",
+      "gf_large_jpg.rf.f60e4502ed43b1691b099421213da668.jpg",
+      "ghnewsok-OK-5639122-ce83e2f3_jpg.rf.26bc681fa619defe87e97e3e9237c0de.jpg",
+      "hdb-floorplan-after-edited_jpeg.rf.f2f5b7e3c27ff30971e7ef3a41ffdc03.jpg",
+      "heat-pump-placement-1-700x442_png.rf.c5dddc8a0f513369d7a4c56121bb51e4.jpg",
+      "house-30_jpeg.rf.684d2660ef8063b02daaaefcf74c716b.jpg",
+      "il_fullxfull_5640963472_s502_jpg.rf.e2a90d6cc6f80c1cf90ff6996d9d519a.jpg",
+      "image-2-1024x1024_jpg.rf.2e3c6f556713bc5341ed48078ee598db.jpg",
+      "image-2-_jpeg.rf.d2dfe22f9f00fb63f4ae29ec2709a406.jpg",
+      "image-3-_jpeg.rf.2282cc6e27800f5f4749a00ad5d1271a.jpg",
+      "image-42-1024x1024_jpg.rf.a6de79fc993eba24fcc1a8ca25e6db99.jpg",
+      "image-9-_jpg.rf.f6fdda0f2cfcfa034b5e349a65be6bcf.jpg",
+      "image-asset_jpg.rf.45af1d7355ca2112651e0939c27c6ef0.jpg",
+      "image_163421214_jpg.rf.a01841992238291394aaa5ee14e3b0ab.jpg",
+      "image_jpeg.rf.bcd65c9d6a224f96abf68cdf37549420.jpg",
+      "image_jpg.rf.99930da2babd52245f7e8cae4194abc5.jpg",
+      "images-1-_jpeg.rf.5013ee1740b66a98eb788977ed1aac2f.jpg",
+      "item_7_jpg.rf.b757a936296eb6bd302dc3c312fbcf6a.jpg",
+      "kd0z7rx6l8ee1_png.rf.8f2f38d5379ac5174956de22ba9ca056.jpg",
+      "large_1585139310_jpg.rf.2819f2bffa5b07e24d12b367363715ae.jpg",
+      "mOPXz_jpg.rf.12ab5a02d0340344a74ba9b197125a33.jpg",
+      "marshal5_jpg.rf.2653b1b29bad02872d49ba43036993af.jpg",
+      "maxresdefault-1-_jpeg.rf.ff8c79477fa70b6411b5d0b4e10886da.jpg",
+      "medium_jpg.rf.17cece8328eb0f85fa635465779faefb.jpg",
+      "mice13397-fig-0010-m_jpg.rf.61a62e51084a041496ed4dce76ddb82a.jpg",
+      "mydimport-1693815759-863-GH5673-North-Shore-City_jpg.rf.aee9cf45581d6de5c69454625985385d.jpg",
+      "one-bedroom-floorplan_jpeg.rf.a03fc46ab03f418e4072d7f6b9a7c2a7.jpg",
+      "origin-1-_jpeg.rf.5e2206c8765e36ccb0c6f39f7652eaad.jpg",
+      "origin-2-_jpeg.rf.76badb1d35e0b5de6a210d168756c977.jpg",
+      "origin-7-_jpg.rf.04f0fd25846e916f499cd3c3cf94928f.jpg",
+      "oufdpdltav3zp4hualpl_jpg.rf.00e69e83036e775788e2d1ca06532040.jpg",
+      "outline-vector-simple-furniture-plan-floor-symbol-as-architecture-design-elements-planning-apartment-arrangement-198521476_jpeg.rf.9c78de0ea2ed800466fe20d911c9fc6a.jpg",
+      "p11_jpg.rf.07283828d87bc3802d8e498f78a6fae6.jpg",
+      "page-011_jpg.rf.f8e067358ad61e0a600561e0353830dc.jpg",
+      "page-150078941-1_png.rf.65f6b62ea16356dc2ccc706822fc2f9a.jpg",
+      "permit-plan-wfixjoyrkfsh_jpg.rf.96824d1cbf3dfa4e6722eaa2263b62b8.jpg",
+      "plan2_712_jpg.rf.266d312b06507c6988cef639493f0117.jpg",
+      "plattegrond-kaya-cyprus-9174403810616_jpeg.rf.51434cd18aa5ffad3499bccba1b921f0.jpg",
+      "project-0299_23_jpeg.rf.8a776912a0e9683ba5c367e4ab73ff02.jpg",
+      "realtypromotions-inc-middletown-ny-Stewart-2211-Bilonial-2-Copy-1-1024x977_jpg.rf.0a24f14ec4d775d1ba0df480f20f3134.jpg",
+      "ridge-house-main-floor_jpg.rf.c263bc2fb8320dedeeea29eaae4bb621.jpg",
+      "s-l1200_jpg.rf.30b876b4a8d0102ebf461b2d2eba1939.jpg",
+      "sampledrawings12-1c3_jpg.rf.7cfb47de69fc628788997b6c4d390e4f.jpg",
+      "screen-shot-2019-05-02-at-11_53_19-pm_png.rf.6ac9721414aba59be86fc8d35bde0243.jpg",
+      "screen-shot-2024-10-23-at-10-56-11-am_orig_png.rf.7fd56c464b76d61557afc9fd157fb87e.jpg",
+      "second-floor-plan_jpg.rf.1dec68e3942a8ec82fdcbc33b28d3768.jpg",
+      "sheet-3_jpg.rf.695c161a281842e748ac54e39a9422b9.jpg",
+      "shp-1012_orig_jpeg.rf.328f54ccadb8dee9be60aba3ba02c5dd.jpg",
+      "single_story_house_detail_working_plan_layout_file_in_dwg_format_24102018054454_jpg.rf.5405c039476464e0dc25d4c6eee9d001.jpg",
+      "test_png.rf.6a304c70927c684d04aa44966e8d59a7.jpg",
+      "upstairs-after-plan_jpg.rf.c1ac8dfa2e6183a4eedd8b670af07534.jpg",
+      "vista_type_C3A_jpeg.rf.043d52526f95367afba531f1060410af.jpg",
+      "w575-1-_jpeg.rf.75a8b6fca811593409bb9ae011e9699f.jpg",
+      "w575-5-_jpeg.rf.f0214604b8c585fd0cac608636e39617.jpg",
+      "w575_jpeg.rf.5e29769642700a5d7b4737da43457036.jpg",
+      "w575_jpg.rf.d8769f6d61b1984b7ae4a6dec246b12f.jpg",
+      "word-image-4069-1_jpg.rf.51182024abfe6be753c69be24608d967.jpg",
+      "wrFq5RTuSRyPni8q8rrU_Screen_Shot_2020-07-02_at_3_42_44_PM_png.rf.87e22cd5ba5e06d78f9f7b1f69764003.jpg",
+      "x11935739_3_jpg.rf.721c0ab15f2e051610220b230df91916.jpg",
+      "xkczp2z7lml81_jpg.rf.74399d7018a74d20f8c71b25d3a04f96.jpg"
+    ]
+  }
+}
