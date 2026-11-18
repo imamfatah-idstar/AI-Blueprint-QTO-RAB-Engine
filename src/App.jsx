@@ -34,22 +34,22 @@ const FALLBACK_HSPK = {
 };
 
 const BASELINE_MATERIALS = [
-  // 1. Bahan Baku Konstruksi (Material yang sama dibandingkan lintas daerah)
-  { material_code: "MAT-CEM", category: "Bahan Baku", material_name: "Semen Portland 50kg (Tiga Roda / Gresik)", hspk_code: "STR-01", coefficient: 4.5, unit: "sak", prices: { Jakarta: 74000, Banten: 71000, Surabaya: 68500 }, note: "4.5 sak / titik kolom beton K-300" },
-  { material_code: "MAT-REB", category: "Bahan Baku", material_name: "Besi Beton Ulir D13 (12m)", hspk_code: "STR-01", coefficient: 4.0, unit: "btg", prices: { Jakarta: 148000, Banten: 144000, Surabaya: 141000 }, note: "4.0 batang / titik kolom struktur" },
-  { material_code: "MAT-AAC", category: "Bahan Baku", material_name: "Bata Ringan AAC 10cm (Hebel/Citicon)", hspk_code: "ARS-01", coefficient: 0.10, unit: "m3", prices: { Jakarta: 660000, Banten: 625000, Surabaya: 595000 }, note: "0.10 m3 / m2 pasangan dinding" },
-  { material_code: "MAT-TILE", category: "Bahan Baku", material_name: "Keramik Lantai 60x60 Grade A", hspk_code: "ARS-02", coefficient: 0.72, unit: "dus", prices: { Jakarta: 185000, Banten: 176000, Surabaya: 168000 }, note: "0.72 dus / m2 lantai (1.44 m2/dus)" },
-  { material_code: "MAT-DOOR", category: "Bahan Baku", material_name: "Kusen & Daun Pintu Engineering Wood", hspk_code: "ARS-03", coefficient: 1.0, unit: "unit", prices: { Jakarta: 1750000, Banten: 1650000, Surabaya: 1590000 }, note: "1.0 set / unit bukaan pintu" },
-  { material_code: "MAT-WIRE", category: "Bahan Baku", material_name: "Kabel NYM 3x2.5mm (50m) + Fitting", hspk_code: "MEP-01", coefficient: 0.18, unit: "roll", prices: { Jakarta: 640000, Banten: 615000, Surabaya: 598000 }, note: "0.18 roll (~9m) / titik instalasi lampu" },
-  { material_code: "MAT-ROOF", category: "Bahan Baku", material_name: "Baja Ringan C75 + Genteng Metal Pasir", hspk_code: "ATP-01", coefficient: 1.05, unit: "m2", prices: { Jakarta: 295000, Banten: 278000, Surabaya: 268000 }, note: "1.05 m2 material / m2 luasan atap" },
-  // 2. Upah Tukang / Tenaga Kerja (Biaya orang yang membangun per Orang-Hari / OH)
-  { material_code: "LAB-PKJ", category: "Upah Tukang", material_name: "Pekerja / Kenek Bangunan", hspk_code: "ARS-01", coefficient: 0.30, unit: "OH", prices: { Jakarta: 165000, Banten: 145000, Surabaya: 135000 }, note: "0.30 OH / m2 pekerjaan dinding & umum" },
-  { material_code: "LAB-TBT", category: "Upah Tukang", material_name: "Tukang Batu (Pasangan Dinding & Keramik)", hspk_code: "ARS-02", coefficient: 0.25, unit: "OH", prices: { Jakarta: 210000, Banten: 185000, Surabaya: 175000 }, note: "0.25 OH / m2 pasangan lantai & plester" },
-  { material_code: "LAB-TBS", category: "Upah Tukang", material_name: "Tukang Besi & Bekisting Struktur", hspk_code: "STR-01", coefficient: 1.80, unit: "OH", prices: { Jakarta: 220000, Banten: 195000, Surabaya: 185000 }, note: "1.80 OH / titik kolom beton bertulang" },
-  { material_code: "LAB-TKY", category: "Upah Tukang", material_name: "Tukang Kayu, Kusen & Pasang Pintu", hspk_code: "ARS-03", coefficient: 1.20, unit: "OH", prices: { Jakarta: 225000, Banten: 200000, Surabaya: 190000 }, note: "1.20 OH / unit pemasangan kusen & pintu" },
-  { material_code: "LAB-TLS", category: "Upah Tukang", material_name: "Tukang Listrik & Instalasi MEP", hspk_code: "MEP-01", coefficient: 0.40, unit: "OH", prices: { Jakarta: 230000, Banten: 205000, Surabaya: 195000 }, note: "0.40 OH / titik instalasi lampu & saklar" },
-  { material_code: "LAB-KPL", category: "Upah Tukang", material_name: "Kepala Tukang Konstruksi & Atap", hspk_code: "ATP-01", coefficient: 0.18, unit: "OH", prices: { Jakarta: 255000, Banten: 230000, Surabaya: 215000 }, note: "0.18 OH / m2 supervisi rangka atap" },
-  { material_code: "LAB-MND", category: "Upah Tukang", material_name: "Mandor Lapangan Proyek", hspk_code: "STR-01", coefficient: 0.25, unit: "OH", prices: { Jakarta: 285000, Banten: 255000, Surabaya: 240000 }, note: "0.25 OH / titik pengawasan mutu lapangan" },
+  // 1. Construction Raw Materials (Compared across regions)
+  { material_code: "MAT-CEM", category: "Raw Materials", material_name: "Portland Cement 50kg (Tiga Roda / Gresik)", hspk_code: "STR-01", coefficient: 4.5, unit: "bag", prices: { Jakarta: 74000, Banten: 71000, Surabaya: 68500 }, note: "4.5 bags / K-300 concrete column point" },
+  { material_code: "MAT-REB", category: "Raw Materials", material_name: "Deformed Rebar D13 (12m)", hspk_code: "STR-01", coefficient: 4.0, unit: "bar", prices: { Jakarta: 148000, Banten: 144000, Surabaya: 141000 }, note: "4.0 bars / structural column point" },
+  { material_code: "MAT-AAC", category: "Raw Materials", material_name: "AAC Lightweight Brick 10cm (Hebel/Citicon)", hspk_code: "ARS-01", coefficient: 0.10, unit: "m3", prices: { Jakarta: 660000, Banten: 625000, Surabaya: 595000 }, note: "0.10 m3 / m2 masonry wall" },
+  { material_code: "MAT-TILE", category: "Raw Materials", material_name: "Floor Tile 60x60 Grade A", hspk_code: "ARS-02", coefficient: 0.72, unit: "box", prices: { Jakarta: 185000, Banten: 176000, Surabaya: 168000 }, note: "0.72 box / m2 floor (1.44 m2/box)" },
+  { material_code: "MAT-DOOR", category: "Raw Materials", material_name: "Engineering Wood Frame & Door Leaf", hspk_code: "ARS-03", coefficient: 1.0, unit: "unit", prices: { Jakarta: 1750000, Banten: 1650000, Surabaya: 1590000 }, note: "1.0 set / door opening unit" },
+  { material_code: "MAT-WIRE", category: "Raw Materials", material_name: "NYM Cable 3x2.5mm (50m) + Fitting", hspk_code: "MEP-01", coefficient: 0.18, unit: "roll", prices: { Jakarta: 640000, Banten: 615000, Surabaya: 598000 }, note: "0.18 roll (~9m) / lighting point" },
+  { material_code: "MAT-ROOF", category: "Raw Materials", material_name: "Light Steel C75 + Sanded Metal Roof Tile", hspk_code: "ATP-01", coefficient: 1.05, unit: "m2", prices: { Jakarta: 295000, Banten: 278000, Surabaya: 268000 }, note: "1.05 m2 material / m2 roof area" },
+  // 2. Worker Wages / Labor (Man-Day cost / OH)
+  { material_code: "LAB-PKJ", category: "Worker Wages", material_name: "General Construction Helper", hspk_code: "ARS-01", coefficient: 0.30, unit: "OH", prices: { Jakarta: 165000, Banten: 145000, Surabaya: 135000 }, note: "0.30 OH / m2 wall & general work" },
+  { material_code: "LAB-TBT", category: "Worker Wages", material_name: "Mason (Wall Masonry & Tiling)", hspk_code: "ARS-02", coefficient: 0.25, unit: "OH", prices: { Jakarta: 210000, Banten: 185000, Surabaya: 175000 }, note: "0.25 OH / m2 floor tiling & plastering" },
+  { material_code: "LAB-TBS", category: "Worker Wages", material_name: "Rebar & Structural Formwork Worker", hspk_code: "STR-01", coefficient: 1.80, unit: "OH", prices: { Jakarta: 220000, Banten: 195000, Surabaya: 185000 }, note: "1.80 OH / reinforced concrete column point" },
+  { material_code: "LAB-TKY", category: "Worker Wages", material_name: "Carpenter (Frames & Door Installation)", hspk_code: "ARS-03", coefficient: 1.20, unit: "OH", prices: { Jakarta: 225000, Banten: 200000, Surabaya: 190000 }, note: "1.20 OH / frame & door installation unit" },
+  { material_code: "LAB-TLS", category: "Worker Wages", material_name: "Electrician & MEP Installer", hspk_code: "MEP-01", coefficient: 0.40, unit: "OH", prices: { Jakarta: 230000, Banten: 205000, Surabaya: 195000 }, note: "0.40 OH / lighting & switch point" },
+  { material_code: "LAB-KPL", category: "Worker Wages", material_name: "Lead Carpenter & Roofing Supervisor", hspk_code: "ATP-01", coefficient: 0.18, unit: "OH", prices: { Jakarta: 255000, Banten: 230000, Surabaya: 215000 }, note: "0.18 OH / m2 roof truss supervision" },
+  { material_code: "LAB-MND", category: "Worker Wages", material_name: "Site Foreman (Field Supervision)", hspk_code: "STR-01", coefficient: 0.25, unit: "OH", prices: { Jakarta: 285000, Banten: 255000, Surabaya: 240000 }, note: "0.25 OH / field quality control point" },
 ];
 
 function buildClientRegionalFallback() {
@@ -94,24 +94,24 @@ const ENGINE_CARDS = [
     eyebrow: "01 // VECTOR ENGINE",
     title: "CAD Automation (ezdxf)",
     badge: "98.5% Precision",
-    frontDesc: "Membaca entitas geometri AutoCAD (.DXF) per layer secara deterministik tanpa konversi manual.",
+    frontDesc: "Reads AutoCAD (.DXF) & FloorPlanCAD (.SVG) vector entities per layer deterministically without manual conversion.",
     backBullets: [
-      "Ekstraksi panjang dinding dari layer A-WALL",
-      "Perhitungan titik kolom S-COLUMN & pintu A-DOOR",
-      "Deteksi titik lampu MEP pada layer ME-LIGHT",
+      "Extracts wall lengths from A-WALL / WALL layers",
+      "Counts structural columns (S-COLUMN) & door arcs (A-DOOR)",
+      "Detects MEP lighting & equipment points on ME-LIGHT",
     ],
-    tags: ["Python ezdxf", "DXF R2010", "Deterministic"],
+    tags: ["Python ezdxf", "FloorPlanCAD SVG", "Deterministic"],
   },
   {
     id: "vision",
     eyebrow: "02 // COMPUTER VISION",
-    title: "OpenCV + VLM Scan",
+    title: "OpenCV + Gemini OCR",
     badge: "Canny + HoughP",
-    frontDesc: "Mendeteksi segmen garis struktural dan area Kop Gambar (Title Block) dari scan denah 2D.",
+    frontDesc: "Detects structural wall segments, closed room contours, and Title Block scale/dimensions from 2D floor plan scans.",
     backBullets: [
-      "Canny Edge Detection & Probabilistic Hough Transform",
-      "Overlay garis dinding hijau & kotak Kop Gambar oranye",
-      "Flagging otomatis jika confidence di bawah 85%",
+      "Adaptive Canny Edge Detection & Probabilistic Hough Transform",
+      "Green wall overlay, room contours & orange Title Block box",
+      "Auto-flags items with confidence below 85% for QS Review",
     ],
     tags: ["OpenCV Headless", "NumPy", "Gemini 2.5 Flash"],
   },
@@ -119,20 +119,20 @@ const ENGINE_CARDS = [
     id: "agent",
     eyebrow: "03 // AGENTIC CONTROL",
     title: "Komander Core Hand-off",
-    badge: "PostgreSQL + Alert",
-    frontDesc: "Mengunci baseline RAB vs RAP ke Supabase dan memicu peringatan deviasi biaya real-time.",
+    badge: "PostgreSQL + Telegram",
+    frontDesc: "Locks RAB vs. RAP baselines into Supabase and triggers real-time cost & schedule reminders via Telegram Bot.",
     backBullets: [
-      "Human-in-the-Loop QS verification & koreksi inline",
-      "Auto-matching harga satuan Master AHSP/HSPK",
-      "Simulasi WhatsApp Alert prioritas tinggi ke manajer proyek",
+      "Human-in-the-Loop QS verification & inline quantity edits",
+      "Regional Excel pricing for raw materials & worker wages (OH)",
+      "Live Telegram Bot cost & schedule reminders for project leads",
     ],
-    tags: ["Supabase", "RAB vs RAP", "WhatsApp Alert"],
+    tags: ["Supabase", "RAB vs RAP", "Telegram Bot"],
   },
 ];
 
 export default function App() {
   const [hspkMap, setHspkMap] = useState(FALLBACK_HSPK);
-  const [projectName, setProjectName] = useState("Pembangunan Hunian Blok M1 - Depok");
+  const [projectName, setProjectName] = useState("Residential Build Block M1 - Depok");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [metadata, setMetadata] = useState(null);
@@ -244,7 +244,7 @@ export default function App() {
       });
       const data = await res.json();
       if (!res.ok) {
-        alert(data.detail || "Gagal memproses file Excel/CSV.");
+        alert(data.detail || "Failed to process Excel/CSV file.");
         return;
       }
       setRegionalData(data);
@@ -262,7 +262,7 @@ export default function App() {
         }
       }
     } catch (_) {
-      alert("Gagal mengunggah file Excel/CSV. Pastikan FastAPI aktif.");
+      alert("Failed to upload Excel/CSV file. Please ensure FastAPI is running.");
     } finally {
       setUploadingExcel(false);
     }
@@ -286,7 +286,7 @@ export default function App() {
       setActiveHighlightCode(null);
       setQtoItems(data.qto_items || []);
     } catch (_) {
-      alert("Gagal menganalisis sampel dataset.");
+      alert("Failed to analyze dataset sample.");
     } finally {
       setLoading(false);
     }
@@ -312,7 +312,7 @@ export default function App() {
       setActiveHighlightCode(null);
       setQtoItems(data.qto_items || []);
     } catch (err) {
-      alert("Gagal menghubungi server analisis. Pastikan FastAPI telah berjalan.");
+      alert("Failed to reach analysis server. Please ensure FastAPI is running.");
     } finally {
       setLoading(false);
     }
@@ -444,12 +444,13 @@ export default function App() {
       });
       const isLabor =
         item.category === "Upah Tukang" ||
+        item.category === "Worker Wages" ||
         String(item.material_code).startsWith("LAB-") ||
         String(item.unit).toUpperCase() === "OH";
       return {
         ...item,
         idx,
-        categoryLabel: isLabor ? "Upah Tukang" : "Bahan Baku",
+        categoryLabel: isLabor ? "Worker Wages" : "Raw Materials",
         pricesByRegion,
       };
     });
@@ -522,7 +523,7 @@ export default function App() {
       );
 
       return {
-        week: `Minggu ${i + 1}`,
+        week: `Week ${i + 1}`,
         weekNum: i + 1,
         stage: stageLabels[stageIdx],
         oh: +((wPct / 100) * totalLaborOH).toFixed(1),
@@ -564,7 +565,7 @@ export default function App() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
-        alert("Gagal mengekspor dokumen Excel RAB.");
+        alert("Failed to export RAB Excel document.");
         return;
       }
       const blob = await res.blob();
@@ -578,7 +579,7 @@ export default function App() {
       a.remove();
       window.URL.revokeObjectURL(url);
     } catch (_) {
-      alert("Gagal menghubungi server untuk ekspor Excel. Pastikan FastAPI berjalan.");
+      alert("Failed to reach server for Excel export. Please ensure FastAPI is running.");
     } finally {
       setExportingRab(false);
     }
@@ -703,14 +704,14 @@ export default function App() {
           <h1
             className="text-[clamp(2.4rem,6.2vw,5.4rem)] font-normal leading-[0.96] tracking-[-0.055em] text-[#0b0b0c] max-w-5xl"
           >
-            Dari gambar kerja ke{" "}
+            From construction blueprints to{" "}
             <span className="font-serif-editorial italic text-[#3d4046]">
-              estimasi RAB
+              precision RAB
             </span>{" "}
-            presisi dalam hitungan detik
+            estimates in seconds
             <button
               onClick={() => setActiveSheet(activeSheet === "pitch" ? null : "pitch")}
-              title="Putar ringkasan pitch"
+              title="Open 3-Minute Pitch"
               className="inline-flex items-center gap-2 ml-3 align-middle bg-[#1b1d1c] text-white rounded-full px-3.5 py-1.5 text-xs font-normal tracking-normal hover:brightness-110 transition"
             >
               <span className="w-2 h-2 rounded-full bg-[#3ddc84] nv-avatar" />
@@ -720,9 +721,9 @@ export default function App() {
           </h1>
 
           <p className="mt-6 text-[#3d4046] max-w-2xl text-[clamp(0.95rem,1.15vw,1.15rem)] leading-relaxed">
-            Prototipe terintegrasi <strong>CAD Automation (ezdxf)</strong>,{" "}
-            <strong>Computer Vision (OpenCV)</strong>, dan{" "}
-            <strong>Human-in-the-Loop QS Review</strong> yang terhubung ke database AHSP/HSPK Supabase & Agen Biaya Komander Core.
+            An integrated prototype combining <strong>CAD Automation (ezdxf)</strong>,{" "}
+            <strong>Computer Vision (OpenCV + Gemini OCR)</strong>, and{" "}
+            <strong>Human-in-the-Loop QS Review</strong> connected to regional Excel pricing, Supabase PostgreSQL, & Komander Core Cost Alerts.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3.5">
@@ -730,7 +731,7 @@ export default function App() {
               onClick={() => scrollToSection("workspace")}
               className="key-ink rounded-[18px] px-6 py-3.5 text-sm font-medium inline-flex items-center gap-2"
             >
-              <span>Buka QTO Workspace</span>
+              <span>Open QTO Workspace</span>
               <ArrowDown className="w-4 h-4" />
             </button>
             <a
@@ -755,11 +756,11 @@ export default function App() {
                 02 // Interactive Prototype Window
               </div>
               <h2 className="text-[clamp(1.85rem,3.6vw,3.1rem)] font-normal leading-[1.04] tracking-[-0.045em]">
-                Ekstraksi Volume, Review QS & Kalkulasi RAB/RAP
+                Volume Extraction, QS Review & RAB/RAP Calculation
               </h2>
             </div>
             <div className="font-mono-tech text-xs text-[#6c7078] bg-[#f4f3ee] px-3.5 py-2 rounded-full border border-[rgba(12,16,28,0.06)]">
-              FastAPI Engine · {qtoItems.length} item aktif
+              FastAPI Engine · {qtoItems.length} active items
             </div>
           </div>
 
@@ -787,7 +788,7 @@ export default function App() {
               <div className="lg:col-span-4 space-y-5">
                 <div>
                   <label className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078] block mb-1.5">
-                    Nama Proyek Konstruksi
+                    Construction Project Name
                   </label>
                   <input
                     type="text"
@@ -799,19 +800,19 @@ export default function App() {
 
                 <div>
                   <div className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078] mb-2.5">
-                    1. Unggah Gambar Kerja / CAD
+                    1. Upload Blueprint / CAD File
                   </div>
                   <div className="space-y-3">
                     <label className="block p-4 rounded-[16px] bg-[#f8f9fb] border border-dashed border-[#35a95c]/60 cursor-pointer hover:bg-[#f4f3ee] transition">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-[#0b0b0c] flex items-center gap-2">
                           <Layers className="w-4 h-4 text-[#35a95c]" />
-                          Jalur A: AutoCAD Vector (.DXF / .SVG)
+                          Path A: AutoCAD Vector (.DXF / .SVG)
                         </span>
                         <Upload className="w-3.5 h-3.5 text-[#6c7078]" />
                       </div>
                       <p className="text-xs text-[#6c7078] mt-1.5 leading-relaxed">
-                        Ekstraksi presisi layer WALL, COLUMN, DOOR, & MEP via Python ezdxf & FloorPlanCAD SVG.
+                        Precision extraction of WALL, COLUMN, DOOR, & MEP layers via Python ezdxf & FloorPlanCAD SVG.
                       </p>
                       <input
                         type="file"
@@ -825,12 +826,12 @@ export default function App() {
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-[#0b0b0c] flex items-center gap-2">
                           <ScanLine className="w-4 h-4 text-[#0b0b0c]" />
-                          Jalur B: Scan Blueprint (.PNG/.JPG)
+                          Path B: 2D Blueprint Scan (.PNG / .JPG)
                         </span>
                         <Upload className="w-3.5 h-3.5 text-[#6c7078]" />
                       </div>
                       <p className="text-xs text-[#6c7078] mt-1.5 leading-relaxed">
-                        Deteksi segmen garis dinding (OpenCV Canny/Hough) & Kop Gambar otomatis.
+                        Detects wall line segments (OpenCV Canny/Hough), room contours, & Title Block scale via Gemini OCR.
                       </p>
                       <input
                         type="file"
@@ -899,7 +900,7 @@ export default function App() {
                       onClick={handleAnalyzeDatasetSample}
                       className="w-full key-white rounded-[12px] py-2 text-xs font-medium"
                     >
-                      Uji Sampel Dataset Terpilih
+                      Run Selected Dataset Sample
                     </button>
                   </div>
                 )}
@@ -909,13 +910,13 @@ export default function App() {
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-mono-tech text-[11px] uppercase tracking-wider text-[#3d4046] flex items-center gap-1.5">
                       <FileSpreadsheet className="w-3.5 h-3.5 text-[#35a95c]" />
-                      3 Dataset Excel Daerah
+                      3 Regional Excel Datasets
                     </span>
                     <a
                       href="/api/sample-excel-prices"
                       className="font-mono-tech text-[10px] underline text-[#3d4046] hover:text-[#0b0b0c]"
                     >
-                      ⬇ Semua (1 File)
+                      ⬇ All (1 File)
                     </a>
                   </div>
                   <div className="grid grid-cols-3 gap-1.5">
@@ -930,10 +931,10 @@ export default function App() {
                     ))}
                   </div>
                   <p className="text-[11px] text-[#6c7078] leading-relaxed">
-                    Unduh salah satu dari 3 Excel daerah di atas (berisi rincian bahan baku + upah tukang), lalu unggah untuk menyesuaikan biaya proyek.
+                    Download one of the 3 regional Excel files above (raw materials + worker wages), then upload to adjust project costs.
                   </p>
                   <label className="block text-center key-white rounded-[12px] py-2 px-3 text-xs font-medium cursor-pointer">
-                    {uploadingExcel ? "Memproses Excel..." : "Upload Excel / CSV Harga Daerah"}
+                    {uploadingExcel ? "Processing Excel..." : "Upload Regional Excel / CSV"}
                     <input
                       type="file"
                       accept=".xlsx,.xls,.csv"
@@ -942,31 +943,31 @@ export default function App() {
                     />
                   </label>
                   <div className="font-mono-tech text-[10px] text-[#6c7078] truncate">
-                    Sumber: {priceSource}
+                    Source: {priceSource}
                   </div>
                 </div>
 
                 {loading && (
                   <div className="p-3.5 bg-[#f4f3ee] border border-[rgba(12,16,28,0.08)] rounded-[14px] text-xs text-[#3d4046] animate-pulse">
-                    Memindai geometri gambar, membaca skala Kop Gambar, dan memetakan item AHSP...
+                    Scanning drawing geometry, reading Title Block scale, and mapping AHSP/HSPK items...
                   </div>
                 )}
 
                 {metadata && (
                   <div className="p-4 bg-[#1b1d1c] text-white rounded-[16px] text-xs space-y-2 border border-white/10">
                     <div className="font-mono-tech text-[11px] uppercase tracking-wider text-[#3ddc84]">
-                      Metadata Kop Gambar (Title Block)
+                      Title Block Metadata
                     </div>
                     <div className="flex justify-between gap-2 border-b border-white/10 pb-1.5">
-                      <span className="text-white/60">Kode Gambar</span>
+                      <span className="text-white/60">Drawing Code</span>
                       <span className="font-mono-tech text-right">{metadata.drawing_code}</span>
                     </div>
                     <div className="flex justify-between gap-2 border-b border-white/10 pb-1.5">
-                      <span className="text-white/60">Disiplin</span>
+                      <span className="text-white/60">Discipline</span>
                       <span className="text-right">{metadata.discipline}</span>
                     </div>
                     <div className="flex justify-between gap-2 border-b border-white/10 pb-1.5">
-                      <span className="text-white/60">Skala</span>
+                      <span className="text-white/60">Scale</span>
                       <span className="font-mono-tech text-right">{metadata.scale}</span>
                     </div>
                     <div className="flex justify-between gap-2 border-b border-white/10 pb-1.5">
@@ -975,7 +976,7 @@ export default function App() {
                     </div>
                     {metadata.ocr_status && (
                       <div className="flex justify-between gap-2 pt-0.5">
-                        <span className="text-white/60">OCR Skala</span>
+                        <span className="text-white/60">Scale OCR</span>
                         <span className="font-mono-tech text-[10px] text-amber-300 text-right">
                           {metadata.ocr_status}
                         </span>
@@ -983,7 +984,7 @@ export default function App() {
                     )}
                     {metadata.dimension_callouts?.length > 0 && (
                       <div className="pt-1 text-[10px] font-mono-tech text-white/70">
-                        Dimensi Terbaca: {metadata.dimension_callouts.join(" · ")}
+                        Dimensions Detected: {metadata.dimension_callouts.join(" · ")}
                       </div>
                     )}
                   </div>
@@ -994,8 +995,8 @@ export default function App() {
                     <div className="flex items-center justify-between gap-2">
                       <div className="font-mono-tech text-[11px] text-white/75">
                         {activeHighlightCode && layerHighlights?.[activeHighlightCode]
-                          ? `Sorotan: [${activeHighlightCode}] ${layerHighlights[activeHighlightCode].label}`
-                          : "Overlay CAD / OpenCV (Klik baris QTO untuk sorot)"}
+                          ? `Highlight: [${activeHighlightCode}] ${layerHighlights[activeHighlightCode].label}`
+                          : "CAD / OpenCV Overlay (Click QTO row to highlight)"}
                       </div>
                       {activeHighlightCode && (
                         <button
@@ -1075,7 +1076,7 @@ export default function App() {
                         2. Quantity Take-Off (QTO) & Human-in-the-Loop QS Review
                       </h3>
                       <p className="text-xs text-[#6c7078] mt-0.5">
-                        Item dengan tingkat kepercayaan rendah ditandai otomatis agar QS cukup memeriksa baris ambigu.
+                        Items with low confidence are automatically flagged so the Quantity Surveyor only reviews ambiguous rows.
                       </p>
                     </div>
                     <button
@@ -1087,26 +1088,26 @@ export default function App() {
                       }`}
                     >
                       {onlyFlagged
-                        ? `Menampilkan: Perlu Cek QS (${flaggedCount})`
-                        : `Filter: Hanya Flag AI (${flaggedCount})`}
+                        ? `Showing: Needs QS Review (${flaggedCount})`
+                        : `Filter: AI Flagged Only (${flaggedCount})`}
                     </button>
                   </div>
 
                   {qtoItems.length === 0 ? (
                     <div className="text-center py-14 px-4 text-xs text-[#6c7078] bg-white border border-dashed border-[rgba(12,16,28,0.12)] rounded-[14px]">
-                      Belum ada file yang diunggah. Klik <strong>Download Sample AutoCAD (.DXF)</strong> lalu unggah ke <strong>Jalur A</strong>, atau unggah gambar denah ke <strong>Jalur B</strong>.
+                      No file uploaded yet. Click <strong>Download Sample AutoCAD (.DXF)</strong> and upload to <strong>Path A</strong>, upload a floor plan to <strong>Path B</strong>, or test a sample from <strong>Dataset Train/Test</strong>.
                     </div>
                   ) : (
                     <div className="overflow-x-auto bg-white rounded-[14px] border border-[rgba(12,16,28,0.08)]">
                       <table className="w-full text-left text-xs">
                         <thead className="bg-[#f4f3ee] text-[#6c7078] border-b border-[rgba(12,16,28,0.08)] font-mono-tech text-[11px]">
                           <tr>
-                            <th className="p-3 font-medium">Item Pekerjaan (AHSP/HSPK)</th>
-                            <th className="p-3 font-medium">Layer / Sumber</th>
-                            <th className="p-3 font-medium">Volume</th>
-                            <th className="p-3 font-medium">Status AI / QS</th>
+                            <th className="p-3 font-medium">Work Item (AHSP/HSPK)</th>
+                            <th className="p-3 font-medium">Layer / Source</th>
+                            <th className="p-3 font-medium">Quantity</th>
+                            <th className="p-3 font-medium">AI / QS Status</th>
                             <th className="p-3 font-medium text-right">
-                              Subtotal RAB ({selectedRegion})
+                              RAB Subtotal ({selectedRegion})
                             </th>
                           </tr>
                         </thead>
@@ -1153,13 +1154,13 @@ export default function App() {
                                               : "bg-[#f4f3ee] text-[#6c7078]"
                                           }`}
                                         >
-                                          {isHighlighted ? "● Disorot" : "Klik untuk sorot"}
+                                          {isHighlighted ? "● Highlighted" : "Click to highlight"}
                                         </span>
                                       )}
                                     </div>
                                     <div className="text-[#6c7078] mt-0.5">{item.qs_note}</div>
                                     <div className="font-mono-tech text-[10px] text-[#35a95c] mt-1">
-                                      Harga {selectedRegion}: Rp{" "}
+                                      {selectedRegion} Rate: Rp{" "}
                                       {Number(hspk.rab_unit_price || 0).toLocaleString("id-ID")} (RAB) · Rp{" "}
                                       {Number(hspk.rap_unit_price || 0).toLocaleString("id-ID")} (RAP) / {item.unit}
                                     </div>
@@ -1183,7 +1184,7 @@ export default function App() {
                                     {item.needs_qs_review ? (
                                       <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full font-mono-tech text-[11px]">
                                         <AlertTriangle className="w-3 h-3" />
-                                        Cek QS ({item.confidence}%)
+                                        QS Review ({item.confidence}%)
                                       </span>
                                     ) : (
                                       <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#35a95c]/15 text-[#227a40] rounded-full font-mono-tech text-[11px]">
@@ -1208,7 +1209,7 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-[#f8f9fb] border border-[rgba(12,16,28,0.08)] rounded-[16px] p-4">
                     <div className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078]">
-                      Total RAB (Tender)
+                      Total RAB (Tender Bid)
                     </div>
                     <div className="text-2xl font-normal tracking-[-0.03em] text-[#0b0b0c] mt-1.5">
                       Rp {totalRAB.toLocaleString("id-ID")}
@@ -1216,7 +1217,7 @@ export default function App() {
                   </div>
                   <div className="bg-[#f8f9fb] border border-[rgba(12,16,28,0.08)] rounded-[16px] p-4">
                     <div className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078]">
-                      Total RAP (Pelaksanaan)
+                      Total RAP (Execution Budget)
                     </div>
                     <div className="text-2xl font-normal tracking-[-0.03em] text-[#35a95c] mt-1.5">
                       Rp {totalRAP.toLocaleString("id-ID")}
@@ -1224,7 +1225,7 @@ export default function App() {
                   </div>
                   <div className="bg-[#f4f3ee] border border-[rgba(12,16,28,0.08)] rounded-[16px] p-4">
                     <div className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078]">
-                      Estimasi Margin Kotor
+                      Estimated Gross Margin
                     </div>
                     <div className="text-2xl font-normal tracking-[-0.03em] text-[#0b0b0c] mt-1.5">
                       {marginPct}%
@@ -1239,12 +1240,12 @@ export default function App() {
                       <div>
                         <h3 className="text-base font-normal tracking-[-0.02em] text-[#0b0b0c] flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-[#35a95c]" />
-                          1 Dataset Komparasi Bahan Baku & Upah Tukang Lintas Daerah (Aktif: {selectedRegion})
+                          Unified Regional Raw Materials & Worker Wages (Active: {selectedRegion})
                         </h3>
                         <p className="text-xs text-[#6c7078] mt-0.5">
-                          Bahan baku & upah tukang yang sama dibandingkan langsung antar daerah ({regionalData.regions.join(", ")}) dan disesuaikan ke{" "}
+                          Identical raw materials & worker wages compared side-by-side across regions ({regionalData.regions.join(", ")}) and adjusted to{" "}
                           <span className="font-mono-tech text-[#0b0b0c]">
-                            {qtoItems.length > 0 ? "Volume QTO Proyek Aktif" : "Simulasi Baseline Blok M1"}
+                            {qtoItems.length > 0 ? "Active Project QTO Volumes" : "Baseline Block M1 Simulation"}
                           </span>
                         </p>
                       </div>
@@ -1296,15 +1297,15 @@ export default function App() {
                               </span>
                             </div>
                             <div className="mt-2 font-mono-tech text-sm font-medium">
-                              RAB Proyek: Rp {Math.round(rc.rab).toLocaleString("id-ID")}
+                              Project RAB: Rp {Math.round(rc.rab).toLocaleString("id-ID")}
                             </div>
                             <div
                               className={`font-mono-tech text-[11px] mt-1 space-y-0.5 ${
                                 isSelected ? "text-white/75" : "text-[#6c7078]"
                               }`}
                             >
-                              <div>Bahan Baku: Rp {Math.round(rc.matOnlyTotal).toLocaleString("id-ID")}</div>
-                              <div>Upah Tukang: Rp {Math.round(rc.laborOnlyTotal).toLocaleString("id-ID")}</div>
+                              <div>Materials: Rp {Math.round(rc.matOnlyTotal).toLocaleString("id-ID")}</div>
+                              <div>Worker Wages: Rp {Math.round(rc.laborOnlyTotal).toLocaleString("id-ID")}</div>
                             </div>
                           </button>
                         );
@@ -1316,8 +1317,8 @@ export default function App() {
                       <table className="w-full text-left text-xs">
                         <thead className="bg-[#f4f3ee] text-[#6c7078] border-b border-[rgba(12,16,28,0.08)] font-mono-tech text-[11px]">
                           <tr>
-                            <th className="p-2.5 font-medium">Item Bahan Baku / Tukang</th>
-                            <th className="p-2.5 font-medium">Kategori</th>
+                            <th className="p-2.5 font-medium">Material / Worker Role</th>
+                            <th className="p-2.5 font-medium">Category</th>
                             {regionalData.regions.map((r) => (
                               <th
                                 key={r}
@@ -1325,12 +1326,12 @@ export default function App() {
                                   r === selectedRegion ? "text-[#0b0b0c] bg-[#e9e8e2]/60" : ""
                                 }`}
                               >
-                                {r} {r === selectedRegion ? "(Aktif)" : ""}
+                                {r} {r === selectedRegion ? "(Active)" : ""}
                               </th>
                             ))}
-                            <th className="p-2.5 font-medium text-right">Volume Proyek</th>
+                            <th className="p-2.5 font-medium text-right">Project Qty</th>
                             <th className="p-2.5 font-medium text-right">
-                              Biaya Proyek ({selectedRegion})
+                              Project Cost ({selectedRegion})
                             </th>
                           </tr>
                         </thead>
@@ -1341,7 +1342,7 @@ export default function App() {
                             const neededQty = +(qtoQty * coeff).toFixed(1);
                             const activeUnitPrice = row.pricesByRegion[selectedRegion] || 0;
                             const projectItemCost = Math.round(neededQty * activeUnitPrice);
-                            const isLabor = row.categoryLabel === "Upah Tukang";
+                            const isLabor = row.categoryLabel === "Worker Wages";
                             return (
                               <tr key={row.material_code} className={isLabor ? "bg-[#f8f9fb]/60" : ""}>
                                 <td className="p-2.5 text-[#0b0b0c]">
@@ -1410,27 +1411,27 @@ export default function App() {
                     <div>
                       <h3 className="text-base font-normal tracking-[-0.02em] text-[#0b0b0c] flex items-center gap-2">
                         <CalendarClock className="w-4 h-4 text-[#35a95c]" />
-                        Generator Jadwal Proyek & Kurva-S Otomatis (Berbasis Volume OH Tukang)
+                        Automated Project Schedule & S-Curve Generator (From Worker OH Volume)
                       </h3>
                       <p className="text-xs text-[#6c7078] mt-0.5">
-                        Total beban kerja tukang{" "}
+                        Total worker effort{" "}
                         <span className="font-mono-tech text-[#0b0b0c] font-medium">
                           {sCurveData.totalLaborOH.toLocaleString("id-ID")} OH
                         </span>{" "}
-                        ÷ kapasitas{" "}
+                        ÷ crew capacity{" "}
                         <span className="font-mono-tech text-[#0b0b0c]">
-                          {workerCount} tukang ({sCurveData.weeklyCapacityOH} OH/minggu)
+                          {workerCount} workers ({sCurveData.weeklyCapacityOH} OH/week)
                         </span>{" "}
                         ={" "}
                         <span className="font-mono-tech text-[#35a95c] font-medium">
-                          Estimasi {sCurveData.totalWeeks} Minggu Pelaksanaan
+                          Est. {sCurveData.totalWeeks} Weeks Execution
                         </span>
                       </p>
                     </div>
 
                     <div className="flex items-center gap-1.5 bg-white border border-[rgba(12,16,28,0.1)] rounded-full px-3 py-1.5">
                       <Users className="w-3.5 h-3.5 text-[#6c7078]" />
-                      <span className="font-mono-tech text-[11px] text-[#6c7078] mr-1">Tim Tukang:</span>
+                      <span className="font-mono-tech text-[11px] text-[#6c7078] mr-1">Crew Size:</span>
                       {[4, 6, 8, 10, 12].map((cnt) => (
                         <button
                           key={cnt}
@@ -1453,16 +1454,16 @@ export default function App() {
                     <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                       <div className="font-mono-tech text-[11px] text-white/80 flex items-center gap-2">
                         <TrendingUp className="w-3.5 h-3.5 text-[#3ddc84]" />
-                        GRAFIK KURVA-S PROGRES KUMULATIF (%) & CASHFLOW MINGGUAN ({selectedRegion.toUpperCase()})
+                        CUMULATIVE S-CURVE PROGRESS (%) & WEEKLY CASHFLOW ({selectedRegion.toUpperCase()})
                       </div>
                       <div className="flex items-center gap-4 font-mono-tech text-[10px]">
                         <span className="flex items-center gap-1.5 text-[#3ddc84]">
                           <span className="w-2.5 h-0.5 bg-[#3ddc84] inline-block" />
-                          Rencana (Baseline S-Curve)
+                          Planned (Baseline S-Curve)
                         </span>
                         <span className="flex items-center gap-1.5 text-amber-300">
                           <span className="w-2.5 h-0.5 bg-amber-300 inline-block" />
-                          Simulasi Realisasi Lapangan
+                          Simulated Field Actuals
                         </span>
                       </div>
                     </div>
@@ -1491,7 +1492,7 @@ export default function App() {
                           viewBox={`0 0 ${W} ${H}`}
                           className="w-full h-44 overflow-visible"
                           role="img"
-                          aria-label="Grafik Kurva-S Proyek"
+                          aria-label="Project S-Curve Chart"
                         >
                           {/* Horizontal grid lines */}
                           {[0, 25, 50, 75, 100].map((g) => (
@@ -1600,12 +1601,12 @@ export default function App() {
                     <table className="w-full text-left text-xs">
                       <thead className="bg-[#f4f3ee] text-[#6c7078] border-b border-[rgba(12,16,28,0.08)] font-mono-tech text-[11px]">
                         <tr>
-                          <th className="p-2.5 font-medium">Minggu</th>
-                          <th className="p-2.5 font-medium">Tahap Pekerjaan Konstruksi</th>
-                          <th className="p-2.5 font-medium text-right">Beban Tukang</th>
-                          <th className="p-2.5 font-medium text-right">Bobot (%)</th>
-                          <th className="p-2.5 font-medium text-right">Kumulatif Rencana</th>
-                          <th className="p-2.5 font-medium text-right">Cashflow RAP Mingguan</th>
+                          <th className="p-2.5 font-medium">Week</th>
+                          <th className="p-2.5 font-medium">Construction Phase</th>
+                          <th className="p-2.5 font-medium text-right">Worker Effort</th>
+                          <th className="p-2.5 font-medium text-right">Weight (%)</th>
+                          <th className="p-2.5 font-medium text-right">Cumulative Plan</th>
+                          <th className="p-2.5 font-medium text-right">Weekly RAP Cashflow</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-[rgba(12,16,28,0.06)]">
@@ -1639,14 +1640,14 @@ export default function App() {
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                       <h3 className="text-base font-normal tracking-[-0.02em] text-[#0b0b0c]">
-                        3. Export Dokumen Resmi RAB, Kirim Reminder Telegram & Aktifkan Komander Core
+                        3. Export Official RAB (.XLSX), Send Telegram Reminder & Activate Komander Core
                       </h3>
                       <p className="text-xs text-[#6c7078] mt-0.5">
-                        Unduh Excel 4-Sheet, kirim reminder RAB & jadwal ke Telegram, atau kunci baseline ke PostgreSQL.
+                        Download the 4-Sheet Excel workbook, send RAB & schedule reminders to Telegram, or lock baseline into PostgreSQL.
                       </p>
                       {savedProjectId && (
                         <p className="font-mono-tech text-[11px] text-[#35a95c] mt-1.5">
-                          ✓ Tersimpan di Supabase PostgreSQL (Project ID: {savedProjectId})
+                          ✓ Saved to Supabase PostgreSQL (Project ID: {savedProjectId})
                         </p>
                       )}
                     </div>
@@ -1660,8 +1661,8 @@ export default function App() {
                         <FileSpreadsheet className="w-4 h-4 text-[#35a95c]" />
                         <span>
                           {exportingRab
-                            ? "Menyiapkan Excel..."
-                            : `⬇ Export RAB, BoM & Kurva-S (${selectedRegion}).xlsx`}
+                            ? "Preparing Excel..."
+                            : `⬇ Export RAB, BoM & S-Curve (${selectedRegion}).xlsx`}
                         </span>
                       </button>
                       <button
@@ -1669,7 +1670,7 @@ export default function App() {
                         onClick={saveAndActivateProject}
                         className="key-ink disabled:opacity-40 rounded-[16px] px-5 py-3 text-xs font-medium whitespace-nowrap"
                       >
-                        {saving ? "Mengirim..." : "Aktifkan & Kirim Reminder Telegram"}
+                        {saving ? "Sending..." : "Activate & Send Telegram Reminder"}
                       </button>
                     </div>
                   </div>
@@ -1678,11 +1679,11 @@ export default function App() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-[rgba(12,16,28,0.08)]">
                     <div>
                       <label className="font-mono-tech text-[10px] uppercase tracking-wider text-[#6c7078] block mb-1">
-                        Telegram Bot Token (Opsional jika sudah di .env/Vercel)
+                        Telegram Bot Token (Optional if set in .env / Vercel)
                       </label>
                       <input
                         type="password"
-                        placeholder="Contoh: 123456:ABC-DEF..."
+                        placeholder="Example: 123456:ABC-DEF..."
                         value={telegramToken}
                         onChange={(e) => setTelegramToken(e.target.value)}
                         className="w-full bg-white border border-[rgba(12,16,28,0.12)] rounded-[10px] px-3 py-1.5 font-mono-tech text-xs text-[#0b0b0c]"
@@ -1690,11 +1691,11 @@ export default function App() {
                     </div>
                     <div>
                       <label className="font-mono-tech text-[10px] uppercase tracking-wider text-[#6c7078] block mb-1">
-                        Telegram Chat ID (Opsional jika sudah di .env/Vercel)
+                        Telegram Chat ID (Optional if set in .env / Vercel)
                       </label>
                       <input
                         type="text"
-                        placeholder="Contoh: 987654321 atau -100..."
+                        placeholder="Example: 987654321 or -100..."
                         value={telegramChatId}
                         onChange={(e) => setTelegramChatId(e.target.value)}
                         className="w-full bg-white border border-[rgba(12,16,28,0.12)] rounded-[10px] px-3 py-1.5 font-mono-tech text-xs text-[#0b0b0c]"
@@ -1709,8 +1710,8 @@ export default function App() {
                       <div className="flex items-center gap-2 font-mono-tech text-[11px] uppercase tracking-wider text-[#3ddc84]">
                         <ShieldAlert className="w-4 h-4 text-[#3ddc84]" />
                         {telegramStatus?.sent
-                          ? `[TELEGRAM REMINDER TERKIRIM LIVE · MSG #${telegramStatus.telegram_message_id}]`
-                          : "[SIMULASI TELEGRAM REMINDER · AGEN BIAYA KOMANDER CORE]"}
+                          ? `[TELEGRAM REMINDER DELIVERED LIVE · MSG #${telegramStatus.telegram_message_id}]`
+                          : "[SIMULATED TELEGRAM REMINDER · KOMANDER CORE COST AGENT]"}
                       </div>
                       {telegramStatus && !telegramStatus.sent && (
                         <span className="font-mono-tech text-[10px] px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300">
@@ -1719,13 +1720,13 @@ export default function App() {
                       )}
                     </div>
                     <div className="text-white/90 leading-relaxed">
-                      Proyek <strong>{projectName}</strong> ({selectedRegion}) aktif. Estimasi{" "}
-                      <strong>{sCurveData.totalWeeks} Minggu ({sCurveData.totalLaborOH} OH)</strong> · Total RAB{" "}
+                      Project <strong>{projectName}</strong> ({selectedRegion}) active. Estimated{" "}
+                      <strong>{sCurveData.totalWeeks} Weeks ({sCurveData.totalLaborOH} OH)</strong> · Total RAB{" "}
                       <strong>Rp {totalRAB.toLocaleString("id-ID")}</strong> · Total RAP{" "}
                       <strong>Rp {totalRAP.toLocaleString("id-ID")}</strong>.
                     </div>
                     <div className="text-white/60 font-mono-tech text-[11px]">
-                      Tindakan Agen Biaya: Pantau pos Atap (ATP-01) & Dinding (ARS-01); tahan persetujuan PO tambahan sebelum verifikasi QS.
+                      Cost Agent Action: Monitor Roof (ATP-01) & Wall (ARS-01) items; hold additional PO approvals pending QS verification.
                     </div>
                   </div>
                 )}
@@ -1746,11 +1747,11 @@ export default function App() {
                 03 // Core Architecture
               </div>
               <h2 className="text-[clamp(2rem,4.2vw,3.6rem)] font-normal leading-[1.02] tracking-[-0.045em] max-w-2xl">
-                Tiga lapisan <span className="font-serif-editorial italic text-[#3ddc84]">otomasi</span> dari denah hingga kontrol biaya.
+                Three layers of <span className="font-serif-editorial italic text-[#3ddc84]">automation</span> from blueprints to cost control.
               </h2>
             </div>
             <p className="text-sm text-white/60 max-w-sm">
-              Klik kartu mana saja untuk membalik dan melihat detail teknis implementasi di balik layar.
+              Click any card to flip it and inspect the underlying technical architecture.
             </p>
           </div>
 
@@ -1787,7 +1788,7 @@ export default function App() {
                         </p>
                       </div>
                       <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs text-white/50">
-                        <span className="font-mono-tech">Klik untuk detail</span>
+                        <span className="font-mono-tech">Click for details</span>
                         <RotateCw className="w-4 h-4 text-white/60" />
                       </div>
                     </div>
@@ -1839,7 +1840,7 @@ export default function App() {
                     Validation & Training Measurement Benchmark
                   </div>
                   <h3 className="text-xl font-normal tracking-[-0.03em] text-white mt-1">
-                    Hasil Pengujian Terukur pada Dataset CAD, Vision, & Harga Daerah
+                    Measured Benchmark Results across CAD, Vision, & Regional Pricing Datasets
                   </h3>
                 </div>
                 <span className="font-mono-tech text-[11px] text-white/60">
@@ -1970,10 +1971,10 @@ export default function App() {
               04 // Deployment & Field Plaza
             </div>
             <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-normal leading-[1.04] tracking-[-0.045em]">
-              Siap untuk demo <span className="font-serif-editorial italic">end-to-end</span> di Komander.ai.
+              Ready for an <span className="font-serif-editorial italic">end-to-end</span> demo at Komander.ai.
             </h2>
             <p className="text-sm text-[#3d4046] leading-relaxed">
-              Pilih node arsitektur di samping untuk melihat kesiapan infrastruktur prototipe ini.
+              Select an infrastructure node on the right to inspect the deployment readiness of this prototype.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               {[
@@ -2009,17 +2010,17 @@ export default function App() {
               </div>
               {activePin === "depok" && (
                 <p className="text-sm text-[#3d4046] leading-relaxed">
-                  <strong>Pembangunan Hunian Blok M1 - Depok</strong> — Denah standar 10m × 12m dengan 9 kolom struktur, 5 unit pintu, dan 8 titik lampu MEP. Gunakan tombol <em>Download Sample AutoCAD (.DXF)</em> untuk langsung menguji ekstraksi vektor.
+                  <strong>Residential Build Block M1 - Depok</strong> — Standard 10m × 12m floor plan with 9 structural columns, 5 door units, and 8 MEP lighting points. Use <em>Download Sample AutoCAD (.DXF)</em> to test vector extraction immediately.
                 </p>
               )}
               {activePin === "supabase" && (
                 <p className="text-sm text-[#3d4046] leading-relaxed">
-                  <strong>Supabase PostgreSQL</strong> — Menyimpan tabel <code>master_hspk</code> (harga tender RAB vs harga pelaksanaan RAP), <code>projects</code>, dan <code>qto_items</code>. Dilengkapi <em>fallback</em> lokal agar demo tetap berjalan meski offline.
+                  <strong>Supabase PostgreSQL</strong> — Stores <code>master_hspk</code> (tender RAB vs. execution RAP unit prices), <code>projects</code>, and <code>qto_items</code>. Equipped with local fallback so demos run smoothly even offline.
                 </p>
               )}
               {activePin === "vercel" && (
                 <p className="text-sm text-[#3d4046] leading-relaxed">
-                  <strong>Vercel Hybrid Monorepo</strong> — Frontend React + Vite terhubung dengan Python FastAPI serverless di rute <code>/api/*</code> melalui <code>vercel.json</code> dan proxy lokal Vite.
+                  <strong>Vercel Hybrid Monorepo</strong> — React + Vite frontend connected to Python FastAPI serverless routes under <code>/api/*</code> via <code>vercel.json</code> and local Vite proxy.
                 </p>
               )}
             </div>
@@ -2034,9 +2035,9 @@ export default function App() {
         <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 w-[min(92vw,440px)] zero-sheet rounded-[22px] p-5 border border-[rgba(12,16,28,0.08)]">
           <div className="flex items-center justify-between mb-3">
             <span className="font-mono-tech text-[11px] uppercase tracking-wider text-[#6c7078]">
-              {activeSheet === "menu" && "Navigasi Cepat"}
-              {activeSheet === "help" && "Panduan Demo 3 Menit"}
-              {activeSheet === "pitch" && "Narasi Pitch Komander.ai"}
+              {activeSheet === "menu" && "Quick Navigation"}
+              {activeSheet === "help" && "3-Minute Demo Guide"}
+              {activeSheet === "pitch" && "Komander.ai Pitch Script"}
             </span>
             <button
               onClick={() => setActiveSheet(null)}
@@ -2074,13 +2075,13 @@ export default function App() {
           {activeSheet === "help" && (
             <ol className="space-y-2.5 text-xs text-[#3d4046] list-decimal pl-4 leading-relaxed">
               <li>
-                Klik <strong>Download Sample AutoCAD (.DXF)</strong> lalu unggah ke <strong>Jalur A</strong> untuk melihat ekstraksi vektor <code>ezdxf</code>.
+                Click <strong>Download Sample AutoCAD (.DXF)</strong> and upload to <strong>Path A</strong> to test deterministic <code>ezdxf</code> vector extraction.
               </li>
               <li>
-                Atau unggah gambar denah <code>.png/.jpg</code> ke <strong>Jalur B</strong> untuk melihat <em>OpenCV Canny/Hough overlay</em>.
+                Or upload a <code>.png/.jpg</code> floor plan to <strong>Path B</strong> to view the <em>OpenCV Canny/Hough overlay</em> & Gemini OCR calibration.
               </li>
               <li>
-                Klik <strong>Filter: Hanya Flag AI</strong>, koreksi volume di tabel untuk memverifikasi item QS, lalu klik <strong>Aktifkan Proyek & Simulasikan Alert Agen</strong>.
+                Click any QTO row to highlight its layer on the drawing, switch cities (<strong>Jakarta / Banten / Surabaya</strong>), export the 4-sheet Excel, and click <strong>Activate & Send Telegram Reminder</strong>.
               </li>
             </ol>
           )}
@@ -2088,10 +2089,10 @@ export default function App() {
           {activeSheet === "pitch" && (
             <div className="space-y-2 text-xs text-[#3d4046] leading-relaxed">
               <p>
-                <em>"Saya membangun prototipe Mini Komander Build yang menjembatani gambar kerja konstruksi (file vektor CAD .dxf dan scan denah 2D) menjadi RAB & RAP otomatis."</em>
+                <em>"I built Mini Komander Build to bridge construction blueprints (.dxf/.svg CAD vectors and 2D floor plan scans) into automated RAB & RAP budgets."</em>
               </p>
               <p>
-                <em>"Item dengan confidence di bawah 85% ditandai untuk Human-in-the-Loop QS Review sebelum baseline dikunci ke PostgreSQL dan dipantau Agen Biaya Komander Core."</em>
+                <em>"Items with confidence below 85% are flagged for Human-in-the-Loop QS Review, adjusted by regional raw material & worker wages, scheduled via S-Curve, and sent to Telegram & PostgreSQL."</em>
               </p>
             </div>
           )}
@@ -2115,7 +2116,7 @@ export default function App() {
 
         <button
           onClick={() => setActiveSheet(activeSheet === "menu" ? null : "menu")}
-          aria-label="Menu Navigasi"
+          aria-label="Navigation Menu"
           className="key-white w-[54px] h-[54px] rounded-[18px] flex items-center justify-center"
         >
           <Menu className="w-5 h-5 text-[#0b0b0c]" />
@@ -2123,7 +2124,7 @@ export default function App() {
 
         <button
           onClick={() => setActiveSheet(activeSheet === "help" ? null : "help")}
-          aria-label="Panduan Demo"
+          aria-label="Demo Guide"
           className="key-white w-[54px] h-[54px] rounded-[18px] flex items-center justify-center"
         >
           <HelpCircle className="w-5 h-5 text-[#0b0b0c]" />
