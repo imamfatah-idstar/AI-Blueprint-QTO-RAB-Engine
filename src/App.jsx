@@ -167,6 +167,11 @@ export default function App() {
   const [layerHighlights, setLayerHighlights] = useState(null);
   const [activeHighlightCode, setActiveHighlightCode] = useState(null);
 
+  // Telegram Reminder states
+  const [telegramToken, setTelegramToken] = useState("");
+  const [telegramChatId, setTelegramChatId] = useState("");
+  const [telegramStatus, setTelegramStatus] = useState(null);
+
   useEffect(() => {
     async function fetchInitialData() {
       // 1. Load Regional Material & HSPK Pricing (Jakarta, Banten, Surabaya)
@@ -626,6 +631,30 @@ export default function App() {
           setSavedProjectId(proj.id);
         }
       }
+
+      // Kirim reminder ke Telegram (Live jika Token/Chat ID tersedia, atau simulasi jika belum)
+      try {
+        const tgRes = await fetch("/api/send-telegram-alert", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            project_name: projectName,
+            selected_region: selectedRegion,
+            total_rab: totalRAB,
+            total_rap: totalRAP,
+            margin_pct: marginPct,
+            total_oh: sCurveData.totalLaborOH,
+            total_weeks: sCurveData.totalWeeks,
+            flagged_count: flaggedCount,
+            bot_token: telegramToken || null,
+            chat_id: telegramChatId || null,
+          }),
+        });
+        if (tgRes.ok) {
+          setTelegramStatus(await tgRes.json());
+        }
+      } catch (_) {}
+
       setAlertSent(true);
     } finally {
       setSaving(false);
@@ -1605,58 +1634,98 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Official Excel Export + Komander Core Hand-off */}
-                <div className="bg-[#f4f3ee] border border-[rgba(12,16,28,0.08)] rounded-[18px] p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                  <div>
-                    <h3 className="text-base font-normal tracking-[-0.02em] text-[#0b0b0c]">
-                      3. Export Dokumen Resmi RAB (.XLSX) & Aktifkan ke Komander Core
-                    </h3>
-                    <p className="text-xs text-[#6c7078] mt-0.5">
-                      Unduh dokumen resmi Excel 4-Sheet (Rekap RAB/RAP, BoQ QS, Daftar Belanja & Tukang, serta Jadwal Kurva-S) atau kunci baseline ke PostgreSQL.
-                    </p>
-                    {savedProjectId && (
-                      <p className="font-mono-tech text-[11px] text-[#35a95c] mt-1.5">
-                        ✓ Tersimpan di Supabase PostgreSQL (Project ID: {savedProjectId})
+                {/* Official Excel Export + Telegram Reminder + Komander Core Hand-off */}
+                <div className="bg-[#f4f3ee] border border-[rgba(12,16,28,0.08)] rounded-[18px] p-5 space-y-4">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                      <h3 className="text-base font-normal tracking-[-0.02em] text-[#0b0b0c]">
+                        3. Export Dokumen Resmi RAB, Kirim Reminder Telegram & Aktifkan Komander Core
+                      </h3>
+                      <p className="text-xs text-[#6c7078] mt-0.5">
+                        Unduh Excel 4-Sheet, kirim reminder RAB & jadwal ke Telegram, atau kunci baseline ke PostgreSQL.
                       </p>
-                    )}
+                      {savedProjectId && (
+                        <p className="font-mono-tech text-[11px] text-[#35a95c] mt-1.5">
+                          ✓ Tersimpan di Supabase PostgreSQL (Project ID: {savedProjectId})
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2.5">
+                      <button
+                        type="button"
+                        disabled={exportingRab}
+                        onClick={handleExportOfficialExcel}
+                        className="key-white rounded-[16px] px-4 py-3 text-xs font-medium inline-flex items-center gap-2 whitespace-nowrap"
+                      >
+                        <FileSpreadsheet className="w-4 h-4 text-[#35a95c]" />
+                        <span>
+                          {exportingRab
+                            ? "Menyiapkan Excel..."
+                            : `⬇ Export RAB, BoM & Kurva-S (${selectedRegion}).xlsx`}
+                        </span>
+                      </button>
+                      <button
+                        disabled={saving}
+                        onClick={saveAndActivateProject}
+                        className="key-ink disabled:opacity-40 rounded-[16px] px-5 py-3 text-xs font-medium whitespace-nowrap"
+                      >
+                        {saving ? "Mengirim..." : "Aktifkan & Kirim Reminder Telegram"}
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <button
-                      type="button"
-                      disabled={exportingRab}
-                      onClick={handleExportOfficialExcel}
-                      className="key-white rounded-[16px] px-4 py-3 text-xs font-medium inline-flex items-center gap-2 whitespace-nowrap"
-                    >
-                      <FileSpreadsheet className="w-4 h-4 text-[#35a95c]" />
-                      <span>
-                        {exportingRab
-                          ? "Menyiapkan Excel..."
-                          : `⬇ Export RAB, BoM & Kurva-S (${selectedRegion}).xlsx`}
-                      </span>
-                    </button>
-                    <button
-                      disabled={qtoItems.length === 0 || saving}
-                      onClick={saveAndActivateProject}
-                      className="key-ink disabled:opacity-40 rounded-[16px] px-5 py-3 text-xs font-medium whitespace-nowrap"
-                    >
-                      {saving ? "Menyimpan..." : "Aktifkan Proyek & Simulasikan Alert Agen"}
-                    </button>
+
+                  {/* Optional Telegram Bot Config (can also be set via Vercel Env Vars) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-[rgba(12,16,28,0.08)]">
+                    <div>
+                      <label className="font-mono-tech text-[10px] uppercase tracking-wider text-[#6c7078] block mb-1">
+                        Telegram Bot Token (Opsional jika sudah di .env/Vercel)
+                      </label>
+                      <input
+                        type="password"
+                        placeholder="Contoh: 123456:ABC-DEF..."
+                        value={telegramToken}
+                        onChange={(e) => setTelegramToken(e.target.value)}
+                        className="w-full bg-white border border-[rgba(12,16,28,0.12)] rounded-[10px] px-3 py-1.5 font-mono-tech text-xs text-[#0b0b0c]"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-mono-tech text-[10px] uppercase tracking-wider text-[#6c7078] block mb-1">
+                        Telegram Chat ID (Opsional jika sudah di .env/Vercel)
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Contoh: 987654321 atau -100..."
+                        value={telegramChatId}
+                        onChange={(e) => setTelegramChatId(e.target.value)}
+                        className="w-full bg-white border border-[rgba(12,16,28,0.12)] rounded-[10px] px-3 py-1.5 font-mono-tech text-xs text-[#0b0b0c]"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 {alertSent && (
                   <div className="p-5 bg-[#1b1d1c] text-white border border-white/10 rounded-[18px] text-xs space-y-2">
-                    <div className="flex items-center gap-2 font-mono-tech text-[11px] uppercase tracking-wider text-[#3ddc84]">
-                      <ShieldAlert className="w-4 h-4 text-[#3ddc84]" />
-                      [SIMULASI WHATSAPP ALERT · PRIORITAS TINGGI · AGEN BIAYA KOMANDER CORE]
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="flex items-center gap-2 font-mono-tech text-[11px] uppercase tracking-wider text-[#3ddc84]">
+                        <ShieldAlert className="w-4 h-4 text-[#3ddc84]" />
+                        {telegramStatus?.sent
+                          ? `[TELEGRAM REMINDER TERKIRIM LIVE · MSG #${telegramStatus.telegram_message_id}]`
+                          : "[SIMULASI TELEGRAM REMINDER · AGEN BIAYA KOMANDER CORE]"}
+                      </div>
+                      {telegramStatus && !telegramStatus.sent && (
+                        <span className="font-mono-tech text-[10px] px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300">
+                          {telegramStatus.reason}
+                        </span>
+                      )}
                     </div>
                     <div className="text-white/90 leading-relaxed">
-                      Proyek <strong>{projectName}</strong> aktif. Simulasi deviasi lapangan: Pos{" "}
-                      <strong>Pekerjaan Atap (ATP-01)</strong> tercatat{" "}
-                      <strong>113% terhadap baseline RAP</strong> (+13% di atas anggaran).
+                      Proyek <strong>{projectName}</strong> ({selectedRegion}) aktif. Estimasi{" "}
+                      <strong>{sCurveData.totalWeeks} Minggu ({sCurveData.totalLaborOH} OH)</strong> · Total RAB{" "}
+                      <strong>Rp {totalRAB.toLocaleString("id-ID")}</strong> · Total RAP{" "}
+                      <strong>Rp {totalRAP.toLocaleString("id-ID")}</strong>.
                     </div>
                     <div className="text-white/60 font-mono-tech text-[11px]">
-                      Bukti Sumber: Sheet Pengeluaran_Minggu27 baris 412–418 · Tindakan: Tahan persetujuan PO baja ringan tambahan sebelum verifikasi QS.
+                      Tindakan Agen Biaya: Pantau pos Atap (ATP-01) & Dinding (ARS-01); tahan persetujuan PO tambahan sebelum verifikasi QS.
                     </div>
                   </div>
                 )}

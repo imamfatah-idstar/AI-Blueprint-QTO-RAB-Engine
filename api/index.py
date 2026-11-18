@@ -1714,3 +1714,105 @@ def export_project_rab_excel(req: ExportProjectRabRequest):
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": f"attachment; filename={fname}"},
     )
+
+
+def _get_env_var(var_name: str) -> str:
+    val = os.getenv(var_name, "").strip()
+    if val:
+        return val
+    env_path = os.path.abspath(os.path.join(BASE_DIR, "..", ".env"))
+    if os.path.isfile(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as ef:
+                for line in ef:
+                    line = line.strip()
+                    if line.startswith(f"{var_name}="):
+                        return line.split("=", 1)[1].strip().strip('"').strip("'")
+        except Exception:
+            pass
+    return ""
+
+
+class TelegramAlertRequest(BaseModel):
+    project_name: str = "Pembangunan Hunian Blok M1 - Depok"
+    selected_region: str = "Jakarta"
+    total_rab: float = 0.0
+    total_rap: float = 0.0
+    margin_pct: str = "0.0"
+    total_oh: float = 0.0
+    total_weeks: int = 4
+    flagged_count: int = 0
+    bot_token: Optional[str] = None
+    chat_id: Optional[str] = None
+
+
+@app.post("/api/send-telegram-alert")
+def send_telegram_alert(req: TelegramAlertRequest):
+    """
+    Mengirimkan reminder & peringatan deviasi anggaran proyek ke Telegram Bot API
+    menggunakan urllib.request (tanpa dependensi eksternal tambahan).
+    """
+    token = (req.bot_token or "").strip() or _get_env_var("TELEGRAM_BOT_TOKEN")
+    chat_id = (req.chat_id or "").strip() or _get_env_var("TELEGRAM_CHAT_ID")
+
+    rab_str = f"Rp {int(round(req.total_rab)):,}".replace(",", ".")
+    rap_str = f"Rp {int(round(req.total_rap)):,}".replace(",", ".")
+
+    message_text = (
+        "🚨 <b>KOMANDER CORE · COST & SCHEDULE REMINDER</b>\n\n"
+        f"🏗️ <b>Proyek:</b> {req.project_name}\n"
+        f"📍 <b>Daerah Harga:</b> {req.selected_region}\n"
+        f"💰 <b>Total RAB:</b> {rab_str}\n"
+        f"📊 <b>Total RAP:</b> {rap_str} (Margin {req.margin_pct}%)\n"
+        f"👷 <b>Estimasi Jadwal:</b> {req.total_weeks} Minggu ({req.total_oh} OH Tukang)\n"
+        f"⚠️ <b>Item Perlu Cek QS:</b> {req.flagged_count} item\n\n"
+        "📌 <i>Reminder Agen Biaya:</i> Pantau pos Atap (ATP-01) & Dinding (ARS-01); "
+        "tahan persetujuan PO tambahan jika realisasi melebihi 100% baseline RAP."
+    )
+
+    if not token or not chat_id:
+        return {
+            "sent": False,
+            "mode": "simulation",
+            "reason": "TELEGRAM_BOT_TOKEN atau TELEGRAM_CHAT_ID belum diisi.",
+            "preview_text": message_text,
+        }
+
+    try:
+        import urllib.request
+        import urllib.error
+
+        url = f"https://api.telegram.org/bot{token}/sendMessage"
+        payload = json.dumps({
+            "chat_id": chat_id,
+            "text": message_text,
+            "parse_mode": "HTML",
+        }).encode("utf-8")
+        http_req = urllib.request.Request(
+            url,
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(http_req, timeout=12) as resp:
+            body = json.loads(resp.read().decode("utf-8"))
+        if body.get("ok"):
+            return {
+                "sent": True,
+                "mode": "telegram_live",
+                "telegram_message_id": body.get("result", {}).get("message_id"),
+                "preview_text": message_text,
+            }
+        return {
+            "sent": False,
+            "mode": "error",
+            "reason": body.get("description", "Telegram API returned ok=false"),
+            "preview_text": message_text,
+        }
+    except Exception as ex:
+        return {
+            "sent": False,
+            "mode": "error",
+            "reason": str(ex),
+            "preview_text": message_text,
+        }
