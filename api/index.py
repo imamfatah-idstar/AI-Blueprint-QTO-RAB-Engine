@@ -902,9 +902,24 @@ def generate_sample_dxf():
 async def analyze_cad(file: UploadFile = File(...)):
     content = await file.read()
     fname = file.filename or "uploaded.dxf"
-    if fname.lower().endswith(".svg"):
-        return _analyze_svg_cad_bytes(content, fname)
+    if not fname.lower().endswith(".dxf"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid file type for AutoCAD DXF endpoint. Please upload a .dxf file (use /api/analyze-svg for .svg files).",
+        )
     return _analyze_dxf_bytes(content, fname)
+
+
+@app.post("/api/analyze-svg")
+async def analyze_svg(file: UploadFile = File(...)):
+    content = await file.read()
+    fname = file.filename or "cad.svg"
+    if not fname.lower().endswith(".svg"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid file type for FloorPlanCAD SVG endpoint. Please upload a .svg file.",
+        )
+    return _analyze_svg_cad_bytes(content, fname)
 
 
 @app.post("/api/analyze-vision")

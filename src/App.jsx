@@ -302,10 +302,19 @@ export default function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const endpoint = mode === "cad" ? "/api/analyze-cad" : "/api/analyze-vision";
+    const endpoint =
+      mode === "dxf" || mode === "cad"
+        ? "/api/analyze-cad"
+        : mode === "svg"
+        ? "/api/analyze-svg"
+        : "/api/analyze-vision";
     try {
       const res = await fetch(endpoint, { method: "POST", body: formData });
       const data = await res.json();
+      if (!res.ok) {
+        alert(data.detail || "Failed to analyze blueprint file.");
+        return;
+      }
       setMetadata(data.metadata);
       setOverlayImg(data.overlay_image || null);
       setLayerHighlights(data.layer_highlights || null);
@@ -314,6 +323,7 @@ export default function App() {
     } catch (err) {
       alert("Failed to reach analysis server. Please ensure FastAPI is running.");
     } finally {
+      e.target.value = "";
       setLoading(false);
     }
   };
@@ -807,18 +817,37 @@ export default function App() {
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-[#0b0b0c] flex items-center gap-2">
                           <Layers className="w-4 h-4 text-[#35a95c]" />
-                          Path A: AutoCAD Vector (.DXF / .SVG)
+                          Path A: AutoCAD Vector (.DXF)
                         </span>
                         <Upload className="w-3.5 h-3.5 text-[#6c7078]" />
                       </div>
                       <p className="text-xs text-[#6c7078] mt-1.5 leading-relaxed">
-                        Precision extraction of WALL, COLUMN, DOOR, & MEP layers via Python ezdxf & FloorPlanCAD SVG.
+                        Precision extraction of WALL, COLUMN, DOOR, & MEP layers via Python ezdxf.
                       </p>
                       <input
                         type="file"
-                        accept=".dxf,.svg"
+                        accept=".dxf"
                         className="hidden"
-                        onChange={(e) => handleUpload(e, "cad")}
+                        onChange={(e) => handleUpload(e, "dxf")}
+                      />
+                    </label>
+
+                    <label className="block p-4 rounded-[16px] bg-[#f8f9fb] border border-dashed border-[#0284c7]/55 cursor-pointer hover:bg-[#f4f3ee] transition">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-[#0b0b0c] flex items-center gap-2">
+                          <Cpu className="w-4 h-4 text-[#0284c7]" />
+                          Path B: FloorPlanCAD Vector (.SVG)
+                        </span>
+                        <Upload className="w-3.5 h-3.5 text-[#6c7078]" />
+                      </div>
+                      <p className="text-xs text-[#6c7078] mt-1.5 leading-relaxed">
+                        Dedicated SVG XML parser for semantic FloorPlanCAD vector strokes, walls, & symbols.
+                      </p>
+                      <input
+                        type="file"
+                        accept=".svg"
+                        className="hidden"
+                        onChange={(e) => handleUpload(e, "svg")}
                       />
                     </label>
 
@@ -826,7 +855,7 @@ export default function App() {
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-[#0b0b0c] flex items-center gap-2">
                           <ScanLine className="w-4 h-4 text-[#0b0b0c]" />
-                          Path B: 2D Blueprint Scan (.PNG / .JPG)
+                          Path C: 2D Blueprint Scan (.PNG / .JPG)
                         </span>
                         <Upload className="w-3.5 h-3.5 text-[#6c7078]" />
                       </div>
@@ -1095,7 +1124,7 @@ export default function App() {
 
                   {qtoItems.length === 0 ? (
                     <div className="text-center py-14 px-4 text-xs text-[#6c7078] bg-white border border-dashed border-[rgba(12,16,28,0.12)] rounded-[14px]">
-                      No file uploaded yet. Click <strong>Download Sample AutoCAD (.DXF)</strong> and upload to <strong>Path A</strong>, upload a floor plan to <strong>Path B</strong>, or test a sample from <strong>Dataset Train/Test</strong>.
+                      No file uploaded yet. Click <strong>Download Sample AutoCAD (.DXF)</strong> and upload to <strong>Path A</strong>, upload an SVG vector to <strong>Path B</strong>, upload a floor plan scan to <strong>Path C</strong>, or test a sample from <strong>Dataset Train/Test</strong>.
                     </div>
                   ) : (
                     <div className="overflow-x-auto bg-white rounded-[14px] border border-[rgba(12,16,28,0.08)]">
