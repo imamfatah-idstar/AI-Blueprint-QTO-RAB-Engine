@@ -55,9 +55,11 @@ mini-komander-build/
 
 ### 1. Backend Setup (Python FastAPI)
 
+Requires **Python 3.10+** (note: `ezdxf==1.3.3` does not support Python 3.8):
+
 ```powershell
 cd mini-komander-build
-python -m venv .venv
+py -3.10 -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 ```

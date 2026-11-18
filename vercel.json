@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{node_modules,dist,.venv,*.xlsx,*.md}/**"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.py" },
     { "source": "/(.*)", "destination": "/index.html" }

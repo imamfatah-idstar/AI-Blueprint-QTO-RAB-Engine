@@ -1,0 +1,10 @@
+.venv
+node_modules
+dist
+.git
+__pycache__
+*.pyc
+*.xlsx
+*.md
+api/train_dataset.py
+api/validate_model.py
