@@ -22,6 +22,7 @@ import {
   TrendingUp,
   Users,
   Cpu,
+  SlidersHorizontal,
 } from "lucide-react";
 import { supabase } from "./lib/supabaseClient";
 
@@ -163,6 +164,12 @@ export default function App() {
   // S-Curve Schedule & Official Excel Export states
   const [workerCount, setWorkerCount] = useState(6);
   const [exportingRab, setExportingRab] = useState(false);
+
+  // What-If Scenario Simulator (Material & Labor Escalation Sensitivity)
+  const [whatIfSteelPct, setWhatIfSteelPct] = useState(0);
+  const [whatIfCementPct, setWhatIfCementPct] = useState(0);
+  const [whatIfFinishPct, setWhatIfFinishPct] = useState(0);
+  const [whatIfLaborPct, setWhatIfLaborPct] = useState(0);
 
   // Interactive Layer Highlighting states
   const [layerHighlights, setLayerHighlights] = useState(null);
@@ -555,6 +562,112 @@ export default function App() {
       schedule,
     };
   }, [regionalData, selectedRegion, activeQtoVolumes, hspkMap, workerCount]);
+
+  // What-If Scenario Simulator: Material Price & Labor Escalation Sensitivity
+  const whatIfAnalysis = React.useMemo(() => {
+    const activeMats = regionalData?.materials_by_region?.[selectedRegion] || [];
+    const activeRegHspk = regionalData?.hspk_by_region?.[selectedRegion] || hspkMap || FALLBACK_HSPK;
+
+    // Baseline RAB & RAP from active QTO volumes (or Block M1 baseline)
+    const baseRab = Object.entries(activeQtoVolumes).reduce(
+      (sum, [code, qty]) => sum + qty * (activeRegHspk[code]?.rab_unit_price || 0),
+      0
+    );
+    const baseRapFromHspk = Object.entries(activeQtoVolumes).reduce(
+      (sum, [code, qty]) => sum + qty * (activeRegHspk[code]?.rap_unit_price || 0),
+      0
+    );
+
+    const getBucketPct = (m) => {
+      const code = String(m.material_code || "").toUpperCase();
+      const isLabor =
+        m.category === "Upah Tukang" ||
+        m.category === "Worker Wages" ||
+        code.startsWith("LAB-") ||
+        String(m.unit).toUpperCase() === "OH";
+      if (isLabor) return { key: "labor", label: "Worker Wages", pct: whatIfLaborPct };
+      if (code === "MAT-REB" || code === "MAT-ROOF") {
+        return { key: "steel", label: "Steel & Roof", pct: whatIfSteelPct };
+      }
+      if (code === "MAT-CEM" || code === "MAT-AAC" || code === "MAT-TILE") {
+        return { key: "cement", label: "Cement & Masonry", pct: whatIfCementPct };
+      }
+      return { key: "finish", label: "Doors & MEP", pct: whatIfFinishPct };
+    };
+
+    let baseMatLaborSum = 0;
+    let totalDelta = 0;
+    const itemImpacts = activeMats.map((m) => {
+      const qtoQty = activeQtoVolumes[m.hspk_code] || 0;
+      const coeff = Number(m.coefficient) || 1.0;
+      const neededQty = qtoQty * coeff;
+      const baseCost = neededQty * (Number(m.unit_price) || 0);
+      const bucket = getBucketPct(m);
+      const deltaCost = baseCost * (bucket.pct / 100);
+      baseMatLaborSum += baseCost;
+      totalDelta += deltaCost;
+      return {
+        material_code: m.material_code,
+        material_name: m.material_name,
+        bucketLabel: bucket.label,
+        pct: bucket.pct,
+        baseCost: Math.round(baseCost),
+        simulatedCost: Math.round(baseCost + deltaCost),
+        deltaCost: Math.round(deltaCost),
+      };
+    });
+
+    const baselineRap = baseRapFromHspk > 0 ? baseRapFromHspk : baseMatLaborSum;
+    const simulatedRap = Math.max(0, Math.round(baselineRap + totalDelta));
+    const deltaRap = Math.round(simulatedRap - baselineRap);
+    const deltaRapPct = baselineRap > 0 ? (deltaRap / baselineRap) * 100 : 0;
+
+    const baselineMargin = Math.round(baseRab - baselineRap);
+    const simulatedMargin = Math.round(baseRab - simulatedRap);
+    const marginErosion = Math.round(baselineMargin - simulatedMargin);
+    const baselineMarginPct = baseRab > 0 ? (baselineMargin / baseRab) * 100 : 0;
+    const simulatedMarginPct = baseRab > 0 ? (simulatedMargin / baseRab) * 100 : 0;
+
+    const recommendedContingency = Math.max(0, deltaRap);
+    const recommendedContingencyPct = baselineRap > 0 ? (recommendedContingency / baselineRap) * 100 : 0;
+
+    const topDrivers = [...itemImpacts]
+      .filter((it) => it.deltaCost !== 0)
+      .sort((a, b) => Math.abs(b.deltaCost) - Math.abs(a.deltaCost))
+      .slice(0, 5);
+    const maxAbsDelta = topDrivers.length > 0 ? Math.max(...topDrivers.map((d) => Math.abs(d.deltaCost))) : 1;
+
+    let riskLevel = "healthy";
+    if (simulatedMargin < 0) riskLevel = "loss";
+    else if (simulatedMarginPct < 10 || deltaRapPct >= 10) riskLevel = "warning";
+
+    return {
+      baseRab: Math.round(baseRab),
+      baselineRap: Math.round(baselineRap),
+      simulatedRap,
+      deltaRap,
+      deltaRapPct,
+      baselineMargin,
+      simulatedMargin,
+      marginErosion,
+      baselineMarginPct,
+      simulatedMarginPct,
+      recommendedContingency,
+      recommendedContingencyPct,
+      topDrivers,
+      maxAbsDelta,
+      riskLevel,
+    };
+  }, [
+    regionalData,
+    selectedRegion,
+    hspkMap,
+    activeQtoVolumes,
+    whatIfSteelPct,
+    whatIfCementPct,
+    whatIfFinishPct,
+    whatIfLaborPct,
+  ]);
 
   const handleExportOfficialExcel = async () => {
     setExportingRab(true);
@@ -1434,6 +1547,271 @@ export default function App() {
                     </div>
                   </div>
                 )}
+
+                {/* What-If Scenario Simulator: Material Price Escalation Sensitivity */}
+                <div className="bg-[#f8f9fb] border border-[rgba(12,16,28,0.08)] rounded-[18px] p-5 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <SlidersHorizontal className="w-4 h-4 text-[#35a95c]" />
+                        <span className="font-medium text-sm text-[#0b0b0c]">
+                          What-If Scenario Simulator: Material Price Escalation Sensitivity
+                        </span>
+                      </div>
+                      <p className="text-xs text-[#6c7078] mt-0.5">
+                        Stress-test <strong>{selectedRegion}</strong> RAP &amp; contractor margin against steel, cement, MEP, and wage inflation.
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {[
+                        { label: "Baseline (0%)", s: 0, c: 0, f: 0, l: 0 },
+                        { label: "Mild (+10% Mat)", s: 10, c: 10, f: 8, l: 5 },
+                        { label: "Steel Shock (+25%)", s: 25, c: 15, f: 5, l: 5 },
+                        { label: "Crisis (+30% / +15%)", s: 30, c: 30, f: 25, l: 15 },
+                      ].map((preset) => {
+                        const isActive =
+                          whatIfSteelPct === preset.s &&
+                          whatIfCementPct === preset.c &&
+                          whatIfFinishPct === preset.f &&
+                          whatIfLaborPct === preset.l;
+                        return (
+                          <button
+                            key={preset.label}
+                            type="button"
+                            onClick={() => {
+                              setWhatIfSteelPct(preset.s);
+                              setWhatIfCementPct(preset.c);
+                              setWhatIfFinishPct(preset.f);
+                              setWhatIfLaborPct(preset.l);
+                            }}
+                            className={`px-2.5 py-1 rounded-full font-mono-tech text-[11px] border transition ${
+                              isActive
+                                ? "bg-[#0b0b0c] text-white border-[#0b0b0c]"
+                                : "bg-white text-[#3d4046] border-[rgba(12,16,28,0.12)] hover:border-[#0b0b0c]/40"
+                            }`}
+                          >
+                            {preset.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 4 Sensitivity Sliders */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    {[
+                      {
+                        label: "Steel & Rebar (D13 / C75)",
+                        val: whatIfSteelPct,
+                        setter: setWhatIfSteelPct,
+                        min: -20,
+                        max: 50,
+                      },
+                      {
+                        label: "Cement, AAC & Tile",
+                        val: whatIfCementPct,
+                        setter: setWhatIfCementPct,
+                        min: -20,
+                        max: 50,
+                      },
+                      {
+                        label: "Doors & MEP Cables",
+                        val: whatIfFinishPct,
+                        setter: setWhatIfFinishPct,
+                        min: -20,
+                        max: 50,
+                      },
+                      {
+                        label: "Worker Wages (OH)",
+                        val: whatIfLaborPct,
+                        setter: setWhatIfLaborPct,
+                        min: -20,
+                        max: 40,
+                      },
+                    ].map((slider) => (
+                      <div
+                        key={slider.label}
+                        className="bg-white border border-[rgba(12,16,28,0.08)] rounded-[14px] p-3.5 space-y-2"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-xs font-medium text-[#0b0b0c]">{slider.label}</span>
+                          <span
+                            className={`font-mono-tech text-xs font-semibold ${
+                              slider.val > 0
+                                ? "text-amber-700"
+                                : slider.val < 0
+                                ? "text-[#227a40]"
+                                : "text-[#6c7078]"
+                            }`}
+                          >
+                            {slider.val > 0 ? `+${slider.val}%` : `${slider.val}%`}
+                          </span>
+                        </div>
+                        <input
+                          type="range"
+                          min={slider.min}
+                          max={slider.max}
+                          step={1}
+                          value={slider.val}
+                          onChange={(e) => slider.setter(Number(e.target.value))}
+                          className="w-full accent-[#0b0b0c] cursor-pointer"
+                        />
+                        <div className="flex justify-between font-mono-tech text-[10px] text-[#8c919b]">
+                          <span>{slider.min}%</span>
+                          <span>0%</span>
+                          <span>+{slider.max}%</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Financial Impact KPIs */}
+                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                    <div className="bg-white border border-[rgba(12,16,28,0.08)] rounded-[12px] p-3.5">
+                      <div className="font-mono-tech text-[10px] uppercase text-[#6c7078]">
+                        Baseline RAP ({selectedRegion})
+                      </div>
+                      <div className="font-mono-tech text-base font-medium text-[#0b0b0c] mt-1">
+                        Rp {whatIfAnalysis.baselineRap.toLocaleString("id-ID")}
+                      </div>
+                      <div className="font-mono-tech text-[10px] text-[#6c7078] mt-0.5">
+                        Fixed RAB: Rp {whatIfAnalysis.baseRab.toLocaleString("id-ID")}
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-[rgba(12,16,28,0.08)] rounded-[12px] p-3.5">
+                      <div className="font-mono-tech text-[10px] uppercase text-[#6c7078]">
+                        Simulated RAP
+                      </div>
+                      <div className="font-mono-tech text-base font-semibold text-[#0b0b0c] mt-1">
+                        Rp {whatIfAnalysis.simulatedRap.toLocaleString("id-ID")}
+                      </div>
+                      <div
+                        className={`font-mono-tech text-[10px] mt-0.5 ${
+                          whatIfAnalysis.deltaRap > 0
+                            ? "text-amber-700"
+                            : whatIfAnalysis.deltaRap < 0
+                            ? "text-[#227a40]"
+                            : "text-[#6c7078]"
+                        }`}
+                      >
+                        {whatIfAnalysis.deltaRap >= 0 ? "+" : ""}
+                        Rp {whatIfAnalysis.deltaRap.toLocaleString("id-ID")} ({whatIfAnalysis.deltaRapPct >= 0 ? "+" : ""}
+                        {whatIfAnalysis.deltaRapPct.toFixed(1)}%)
+                      </div>
+                    </div>
+
+                    <div
+                      className={`rounded-[12px] p-3.5 border ${
+                        whatIfAnalysis.riskLevel === "loss"
+                          ? "bg-red-50 border-red-200"
+                          : whatIfAnalysis.riskLevel === "warning"
+                          ? "bg-amber-50 border-amber-200"
+                          : "bg-white border-[rgba(12,16,28,0.08)]"
+                      }`}
+                    >
+                      <div className="font-mono-tech text-[10px] uppercase text-[#6c7078]">
+                        Simulated Margin
+                      </div>
+                      <div
+                        className={`font-mono-tech text-base font-semibold mt-1 ${
+                          whatIfAnalysis.simulatedMargin < 0
+                            ? "text-red-700"
+                            : whatIfAnalysis.riskLevel === "warning"
+                            ? "text-amber-800"
+                            : "text-[#227a40]"
+                        }`}
+                      >
+                        Rp {whatIfAnalysis.simulatedMargin.toLocaleString("id-ID")}
+                      </div>
+                      <div className="font-mono-tech text-[10px] text-[#6c7078] mt-0.5">
+                        {whatIfAnalysis.simulatedMarginPct.toFixed(1)}% of RAB (was {whatIfAnalysis.baselineMarginPct.toFixed(1)}%)
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-[rgba(12,16,28,0.08)] rounded-[12px] p-3.5">
+                      <div className="font-mono-tech text-[10px] uppercase text-[#6c7078]">
+                        Contingency Buffer
+                      </div>
+                      <div className="font-mono-tech text-base font-medium text-[#0b0b0c] mt-1">
+                        Rp {whatIfAnalysis.recommendedContingency.toLocaleString("id-ID")}
+                      </div>
+                      <div className="font-mono-tech text-[10px] text-[#6c7078] mt-0.5 flex items-center gap-1">
+                        {whatIfAnalysis.riskLevel === "loss" ? (
+                          <span className="text-red-700 font-medium">Overrun! Margin negative</span>
+                        ) : whatIfAnalysis.riskLevel === "warning" ? (
+                          <span className="text-amber-700 font-medium">
+                            Add {whatIfAnalysis.recommendedContingencyPct.toFixed(1)}% reserve
+                          </span>
+                        ) : (
+                          <span className="text-[#227a40]">
+                            +{whatIfAnalysis.recommendedContingencyPct.toFixed(1)}% reserve
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Top Cost-Driver Sensitivity Bars */}
+                  {whatIfAnalysis.topDrivers.length > 0 ? (
+                    <div className="bg-white border border-[rgba(12,16,28,0.08)] rounded-[14px] p-4 space-y-2.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono-tech text-[11px] uppercase tracking-wider text-[#3d4046]">
+                          Top Cost-Impact Drivers (Sensitivity Ranking)
+                        </span>
+                        <span className="font-mono-tech text-[10px] text-[#6c7078]">
+                          Margin erosion: {whatIfAnalysis.marginErosion >= 0 ? "-" : "+"}Rp{" "}
+                          {Math.abs(whatIfAnalysis.marginErosion).toLocaleString("id-ID")}
+                        </span>
+                      </div>
+                      <div className="space-y-2">
+                        {whatIfAnalysis.topDrivers.map((drv) => {
+                          const barWidth = Math.max(
+                            6,
+                            Math.round((Math.abs(drv.deltaCost) / whatIfAnalysis.maxAbsDelta) * 100)
+                          );
+                          const isIncrease = drv.deltaCost > 0;
+                          return (
+                            <div key={drv.material_code} className="space-y-1">
+                              <div className="flex items-center justify-between text-xs">
+                                <span className="text-[#0b0b0c] truncate pr-2">
+                                  <span className="font-mono-tech text-[10px] text-[#6c7078] mr-1.5">
+                                    [{drv.material_code}]
+                                  </span>
+                                  {drv.material_name}
+                                  <span className="font-mono-tech text-[10px] text-[#6c7078] ml-1.5">
+                                    ({drv.pct > 0 ? `+${drv.pct}%` : `${drv.pct}%`})
+                                  </span>
+                                </span>
+                                <span
+                                  className={`font-mono-tech text-xs font-medium whitespace-nowrap ${
+                                    isIncrease ? "text-amber-700" : "text-[#227a40]"
+                                  }`}
+                                >
+                                  {isIncrease ? "+" : ""}
+                                  Rp {drv.deltaCost.toLocaleString("id-ID")}
+                                </span>
+                              </div>
+                              <div className="w-full h-2 bg-[#f4f3ee] rounded-full overflow-hidden">
+                                <div
+                                  className={`h-full rounded-full transition-all duration-300 ${
+                                    isIncrease ? "bg-amber-500" : "bg-[#35a95c]"
+                                  }`}
+                                  style={{ width: `${barWidth}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-white border border-dashed border-[rgba(12,16,28,0.12)] rounded-[14px] p-3.5 text-center text-xs text-[#6c7078]">
+                      Adjust any slider or click a scenario preset above (e.g. <strong>Steel Shock (+25%)</strong>) to simulate RAP cost impact and margin sensitivity.
+                    </div>
+                  )}
+                </div>
 
                 {/* Generator Jadwal Proyek & Kurva-S (S-Curve) Otomatis dari Volume OH Tukang */}
                 <div className="bg-[#f8f9fb] border border-[rgba(12,16,28,0.08)] rounded-[18px] p-5 space-y-4">
