@@ -21,6 +21,7 @@ import {
   CalendarClock,
   TrendingUp,
   Users,
+  Cpu,
 } from "lucide-react";
 import { supabase } from "./lib/supabaseClient";
 
